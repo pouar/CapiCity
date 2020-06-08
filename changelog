@@ -1,0 +1,123 @@
+*1.0
+-- Stabilized Server
+-- Renamed to "Capi City"
+-- Nicer chat
+-- Ability to use costum avatars (does not work with monopd)
+-- Removed gator support and added support for own server-list
+
+*0.5
+-- Added animations
+-- Added option to hide menubar
+-- Do not hsow titlebar of the docks, if layout is locked
+-- Added emoicons
+-- Added option to disable them
+-- Moves autoroll button to Turn menu
+-- Added turn menu
+-- Added some shortcuts
+-- Added Set button for setting game description
+-- Make more use of system colors
+-- Notify user, if he/she gets turn
+-- Added option to set animation speed
+-- Added searchbar
+
+*0.4 beta 1+
+-- Added polnish translation
+
+*0.4 beta 1
+-- Mark spectators
+-- New and simpler code for the estatelabels
+-- Added support for background-colors
+-- Added support for estate icons
+-- Added support for estatebackgrounds
+-- Added selloption, if Capid is uses and game allows selling
+-- Interate capid
+-- Merged base-source from Capid
+-- Added autoroll support
+-- Merged Jail-dock to Turn-dock
+-- Moved Trades to the main window
+-- Show Current server in the titlebar
+-- Menu for show/hide the docks
+
+*0.3
+-- Moved object, MOC ui_headers to a build dir
+-- Added a Fallback-icon, if a players image is not found
+
+*0.3 rc 1
+-- Some minor Bugfixes
+-- Removed unused Actions
+
+*0.3 beta 2
+-- Do not show Buy/Sell houserow if the group contains only one street
+-- Added an overview for each player of the estates owns, sorted by group
+-- Removed estate dock. Now Use the context menus for estate handling
+-- Moved message dock to the left side by default (can still be moved back to right)
+
+*0.3 beta 1
+-- Added a Highlight to the hud button to highlith a player
+-- Removed the "Sell" option from the contextmenu since monopd does not handle this correctly
+-- Added a trade button to the hud. Now this button is used to begin a trade
+-- Shadows for the avatars on the board
+-- Disabled sell button
+-- Jail image is removed immediately on the board, when a player leaves jail
+
+*0.2
+-- Now asking, when player leaves a running game (and only then)
+-- If connection is lost by a disconnect from server. Jump to the server-choose
+-- Refactoring for the server, so that some code can be shared
+-- Unbold playernames in the Hud, after leaving game
+
+*0.2 rc 1
+-- The 'Buy houserow' feature now checks, if player can pay the whole row
+-- Translation for the Messagebox-Buttons (Currently only for german)
+-- More compact view for the auction
+-- Bankrupt palyers not visible on the field
+-- Some change in the default UI
+-- Estate-dock is hidden by default
+-- Some minor changes.
+
+*0.1 beta 2
+-- Ability to buy/sell houserows (A house every street in the same group)
+-- Ability to reconnect after crash
+-- Seperate lines for player name and money
+-- Some minor changes
+
+*0.2 beta 1
+-- Added german translation (translators for more languages are welcome)
+-- Added finnish translation (Thanks to sami345)
+-- Added context menus for estates
+-- Auto reconnect (testers needed!!)
+-- Show double normal rent, if a single player owns a whole group.
+-- Minor improvments
+
+* 0.1 rc 1
+-- Added tooltips
+-- Gamelist shows master of game
+-- Brighter Colors for playernames in the chat
+-- Saving window-size
+-- Icons for taxpaying
+-- When the game ends, only the "Exit game" button is visible in the middle
+
+* 0.1 beta 2
+-- New default layout
+-- Own layout gets saved
+-- Layout can be locked
+-- When drawing field: Aspect-ratio of 1:1 is holded
+-- Fixed compiler warnings
+-- Fixed chrash when leaving server from current game and rejoining server
+-- Chatcolors for players are now randomly choosen by the HSV-Scheme to prevent bright colors
+-- New color-scheme for messages and chat
+-- Added programm-icon
+-- New path for images
+-- New implemenation for gameconfig to be able to set integer values
+-- Added a new Metaserver: monopd-gator.not-another-server.net (Little thanks to tswaehn for the commend for Atlantik (http://www.kde-apps.org/content/show.php/Atlantik?content=10019)
+-- "Guess" for cardnames, since they are not sendet by server. (Current Guess: "Get out of jail")
+-- Some minor improvments
+
+* 0.1 beta 1
+-- Smart connecting to server
+-- Fixed .pro file
+-- Options to set Playername and Image
+-- Working Menus
+-- Fixed crash, when Capitalism is not Master of game
+-- Fixed game-configuration behaviour
+-- Some minor improvments

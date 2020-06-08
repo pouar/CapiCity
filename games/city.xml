@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF8"?>
+
+<capigame>
+	<general>
+		<name>Monopoly</name>
+		<description>The classic Monopoly game</description>
+		<minplayers>2</minplayers>
+		<maxplayers>6</maxplayers>
+		<houses>32</houses>
+		<hotels>16</hotels>
+		<startmoney>1500</startmoney>
+	</general>
+	<board>
+		<bgcolor>#d5ffd5</bgcolor>
+		<go>0</go>
+	</board>
+	<estategroup id="0" name="Dark Purple">
+		<color>#6a346a</color>
+		<houseprice>50</houseprice>
+	</estategroup>
+	<estategroup id="1" name="Light Blue">
+		<color>#9cceff</color>
+		<houseprice>50</houseprice>
+	</estategroup>
+	<estategroup id="2" name="Purple">
+		<color>#9c0062</color>
+		<houseprice>100</houseprice>
+	</estategroup>
+	<estategroup id="3" name="Orange">
+		<color>#ff9900</color>
+		<houseprice>100</houseprice>
+	</estategroup>
+	<estategroup id="4" name="Red">
+		<color>#ff0000</color>
+		<houseprice>150</houseprice>
+	</estategroup>
+	<estategroup id="5" name="Yellow">
+		<color>#ffff39</color>
+		<houseprice>150</houseprice>
+	</estategroup>
+	<estategroup id="6" name="Green">
+		<color>#009900</color>
+		<houseprice>200</houseprice>
+	</estategroup>
+	<estategroup id="7" name="Blue">
+		<color>#0000ff</color>
+		<houseprice>200</houseprice>
+	</estategroup>
+	<estategroup id="8" name="Railroads">
+		<price>200</price>
+		<rentmath>Math.pow(2,${GROUPOWNED})*12.5</rentmath>
+	</estategroup>
+	<estategroup id="9" name="Utilities">
+		<price>150</price>
+		<rentmath>(6*${GROUPOWNED}-2)*${DICE}</rentmath>
+	</estategroup>
+	<cardgroup name="chance">
+		<card>
+			<text>Advance Token to nearest utility.  If unowned you may buy it from bank. If owned, throw dice and pay owner a total ten times the amount thrown.</text>
+			<advancetonextof>Utilities</advancetonextof>
+			<rentmath>10*${DICE}</rentmath>
+			<roll>1</roll>
+		</card>
+		<card>
+			<text>Go directly to jail. Do not pass go, do not collect $200</text>
+			<tojail>1</tojail>
+		</card>
+		<card>
+			<text>Take a ride on the Reading. If you pass go, collect $200</text>
+			<advanceto>5</advanceto>
+		</card>
+		<card>
+			<text>Take a walk on the Boardwalk. Advance token to Boardwalk.</text>
+			<advanceto>39</advanceto>
+		</card>
+		<card>
+			<text>Go back three spaces</text>
+			<advance>-3</advance>
+		</card>
+		<card>
+			<text>Advance to St. Charles Place.  If you pass go, collect $200</text>
+			<advanceto>11</advanceto>
+		</card>
+		<card>
+			<text>Your building and loan matures.  Collect $150</text>
+			<pay>-150</pay>
+		</card>
+		<card>
+			<text>Pay poor tax of $15</text>
+			<pay>15</pay>
+		</card>
+		<card>
+			<text>Advance token to nearest Railroad and pay owner Twice the Rental to which he is entitled.  If Railroad is unowned, you may buy it from the bank.</text>
+			<advancetonextof>Railroads</advancetonextof>
+			<rentmath>Math.pow(2,${GROUPOWNED})*25</rentmath>
+		</card>
+		<card>
+			<text>Bank pays you dividend of $50</text>
+			<pay>-50</pay>
+		</card>
+		<card>
+			<text>Advance to Illinois Avenue</text>
+			<advanceto>24</advanceto>
+		</card>
+		<card>
+			<text>This card may be kept until needed or sold.  GET OUT OF JAIL FREE</text>
+			<title>Get out of jail</title>
+			<canbeowned>1</canbeowned>
+			<outofjail>1</outofjail>
+		</card>
+		<card>
+			<text>Make General Repairs On All Your Property.  For each house pay $25, For each hotel, $100</text>
+			<payhouse>25</payhouse>
+			<payhotel>100</payhotel>
+		</card>
+		<card>
+			<text>You have been elected CHAIRMAN OF THE BOARD.  Pay each player $50</text>
+			<payeach>50</payeach>
+		</card>
+		<card>
+			<text>Advance to Go (Collect $200)</text>
+			<advanceto>0</advanceto>
+		</card>
+	</cardgroup>
+	<cardgroup name="community">
+		<card>
+			<text>You Inherit $100</text>
+			<pay>-100</pay>
+		</card>
+		<card>
+			<text>Life Insurance Matures, Collect $100</text>
+			<pay>-100</pay>
+		</card>
+		<card>
+			<text>GO TO JAIL -- go directly to jail DO NOT PASS GO DO NOT COLLECT $200</text>
+			<tojail>1</tojail>
+		</card>
+		<card>
+			<text>From Sale of Stock, You Get $45</text>
+			<pay>-45</pay>
+		</card>
+		<card>
+			<text>Bank Error in Your Favour - Collect $200</text>
+			<pay>-200</pay>
+		</card>
+		<card>
+			<text>Get out of Jail Free (this card may be kept until needed or sold)</text>
+			<title>Get out of jail</title>
+			<outofjail>1</outofjail>
+			<canbeowned>1</canbeowned>
+		</card>
+		<card>
+			<text>Doctor's Fee, Pay $50</text>
+			<pay>50</pay>
+		</card>
+		<card>
+			<text>Income Tax Refund, Collect $20</text>
+			<pay>-20</pay>
+		</card>
+		<card>
+			<text>Advance to Go (Collect $200)</text>
+			<advanceto>0</advanceto>
+		</card>
+		<card>
+			<text>Xmas Fund Matures, Collect $100</text>
+			<pay>-100</pay>
+		</card>
+		<card>
+			<text>Pay School Tax of $150</text>
+			<pay>150</pay>
+		</card>
+		<card>
+			<text>Grand Opera Opening, Collect $50 from every player for opening night seats</text>
+			<payeach>-50</payeach>
+		</card>
+		<card>
+			<text>You are Assessed for Street Repairs $40 per house, $115 per hotel</text>
+			<payhouse>40</payhouse>
+			<payhotel>115</payhotel>
+		</card>
+		<card>
+			<text>Receive for Services $25</text>
+			<pay>-25</pay>
+		</card>
+		<card>
+			<text>You have won Second Prize in an Beauty Contest Collect $10</text>
+			<pay>-10</pay>
+		</card>
+		<card>
+			<text>Pay Hospital $100</text>
+			<pay>100</pay>
+		</card>
+	</cardgroup>
+	<estate id="0" name="Go">
+		<passmoney>200</passmoney>
+	</estate>
+	<estate id="1" name="Mediterranean Avenue">
+		<group>0</group>
+		<price>60</price>
+		<rent0>2</rent0>
+		<rent1>10</rent1>
+		<rent2>30</rent2>
+		<rent3>90</rent3>
+		<rent4>160</rent4>
+		<rent5>250</rent5>
+	</estate>
+	<estate id="2" name="Community Chest">
+		<takecard>community</takecard>
+		<paytarget>20</paytarget>
+	</estate>
+	<estate id="3" name="Baltic Avenue">
+		<group>0</group>
+		<price>60</price>
+		<rent0>4</rent0>
+		<rent1>20</rent1>
+		<rent2>60</rent2>
+		<rent3>180</rent3>
+		<rent4>320</rent4>
+		<rent5>450</rent5>
+	</estate>
+	<estate id="4" name="Income Tax">
+		<tax>200</tax>
+		<taxpercentage>10</taxpercentage>
+		<paytarget>20</paytarget>
+	</estate>
+	<estate id="5" name="Reading Railroad">
+		<group>8</group>
+	</estate>
+	<estate id="6" name="Oriental Avenue">
+		<group>1</group>
+		<price>100</price>
+		<rent0>6</rent0>
+		<rent1>30</rent1>
+		<rent2>90</rent2>
+		<rent3>270</rent3>
+		<rent4>400</rent4>
+		<rent5>550</rent5>
+	</estate>
+	<estate id="7" name="Chance">
+		<takecard>chance</takecard>
+		<paytarget>20</paytarget>
+		<icon>qmark-red.png</icon>
+	</estate>
+	<estate id="8" name="Vermont Avenue">
+		<group>1</group>
+		<price>100</price>
+		<rent0>6</rent0>
+		<rent1>30</rent1>
+		<rent2>90</rent2>
+		<rent3>270</rent3>
+		<rent4>400</rent4>
+		<rent5>550</rent5>
+	</estate>
+	<estate id="9" name="Connecticut Avenue">
+		<group>1</group>
+		<price>120</price>
+		<rent0>8</rent0>
+		<rent1>40</rent1>
+		<rent2>100</rent2>
+		<rent3>300</rent3>
+		<rent4>450</rent4>
+		<rent5>600</rent5>
+	</estate>
+	<estate id="10" name="In Jail / Just Visiting">
+		<jail>1</jail>
+		<paytarget>20</paytarget>
+		<payamount>50</payamount>
+	</estate>
+	<estate id="11" name="St. Charles Place">
+		<group>2</group>
+		<price>140</price>
+		<rent0>10</rent0>
+		<rent1>50</rent1>
+		<rent2>150</rent2>
+		<rent3>450</rent3>
+		<rent4>625</rent4>
+		<rent5>750</rent5>
+	</estate>
+	<estate id="12" name="Electric Company">
+		<group>9</group>
+	</estate>
+	<estate id="13" name="States Avenue">
+		<group>2</group>
+		<price>140</price>
+		<rent0>10</rent0>
+		<rent1>50</rent1>
+		<rent2>150</rent2>
+		<rent3>450</rent3>
+		<rent4>625</rent4>
+		<rent5>750</rent5>
+	</estate>
+	<estate id="14" name="Virginia Avenue">
+		<group>2</group>
+		<price>160</price>
+		<rent0>12</rent0>
+		<rent1>60</rent1>
+		<rent2>180</rent2>
+		<rent3>500</rent3>
+		<rent4>700</rent4>
+		<rent5>900</rent5>
+	</estate>
+	<estate id="15" name="Pennsylvania Railroad">
+		<group>8</group>
+	</estate>
+	<estate id="16" name="St. James Place">
+		<group>3</group>
+		<price>180</price>
+		<rent0>14</rent0>
+		<rent1>70</rent1>
+		<rent2>200</rent2>
+		<rent3>550</rent3>
+		<rent4>750</rent4>
+		<rent5>950</rent5>
+	</estate>
+	<estate id="17" name="Community Chest">
+		<takecard>community</takecard>
+		<paytarget>20</paytarget>
+	</estate>
+	<estate id="18" name="Tennessee Avenue">
+		<group>3</group>
+		<price>180</price>
+		<rent0>14</rent0>
+		<rent1>70</rent1>
+		<rent2>200</rent2>
+		<rent3>550</rent3>
+		<rent4>750</rent4>
+		<rent5>950</rent5>
+	</estate>
+	<estate id="19" name="New York Avenue">
+		<group>3</group>
+		<price>200</price>
+		<rent0>18</rent0>
+		<rent1>80</rent1>
+		<rent2>220</rent2>
+		<rent3>600</rent3>
+		<rent4>800</rent4>
+		<rent5>1000</rent5>
+	</estate>
+	<estate id="20" name="Free Parking">
+		<freeparking>1</freeparking>
+		<icon>dollar.png</icon>
+	</estate>
+	<estate id="21" name="Kentucky Avenue">
+		<group>4</group>
+		<price>220</price>
+		<rent0>18</rent0>
+		<rent1>90</rent1>
+		<rent2>250</rent2>
+		<rent3>700</rent3>
+		<rent4>875</rent4>
+		<rent5>1050</rent5>
+	</estate>
+	<estate id="22" name="Chance">
+		<takecard>chance</takecard>
+		<paytarget>20</paytarget>
+		<icon>qmark-red.png</icon>
+	</estate>
+	<estate id="23" name="Indiana Avenue">
+		<group>4</group>
+		<price>220</price>
+		<rent0>18</rent0>
+		<rent1>90</rent1>
+		<rent2>250</rent2>
+		<rent3>700</rent3>
+		<rent4>875</rent4>
+		<rent5>1050</rent5>
+	</estate>
+	<estate id="24" name="Illinois Avenue">
+		<group>4</group>
+		<price>240</price>
+		<rent0>20</rent0>
+		<rent1>100</rent1>
+		<rent2>300</rent2>
+		<rent3>750</rent3>
+		<rent4>925</rent4>
+		<rent5>1100</rent5>
+	</estate>
+	<estate id="25" name="B &#38; O Railroad">
+		<group>8</group>
+	</estate>
+	<estate id="26" name="Atlantic Avenue">
+		<group>5</group>
+		<price>260</price>
+		<rent0>22</rent0>
+		<rent1>110</rent1>
+		<rent2>330</rent2>
+		<rent3>800</rent3>
+		<rent4>975</rent4>
+		<rent5>1150</rent5>
+	</estate>
+	<estate id="27" name="Ventnor Avenue">
+		<group>5</group>
+		<price>260</price>
+		<rent0>22</rent0>
+		<rent1>110</rent1>
+		<rent2>330</rent2>
+		<rent3>800</rent3>
+		<rent4>975</rent4>
+		<rent5>1150</rent5>
+	</estate>
+	<estate id="28" name="Water Works">
+		<group>9</group>
+	</estate>
+	<estate id="29" name="Marvin Gardens">
+		<group>5</group>
+		<price>280</price>
+		<rent0>24</rent0>
+		<rent1>120</rent1>
+		<rent2>360</rent2>
+		<rent3>850</rent3>
+		<rent4>1025</rent4>
+		<rent5>1200</rent5>
+	</estate>
+	<estate id="30" name="Go to Jail">
+		<tojail>1</tojail>
+	</estate>
+	<estate id="31" name="Pacific Avenue">
+		<group>6</group>
+		<price>300</price>
+		<rent0>26</rent0>
+		<rent1>130</rent1>
+		<rent2>390</rent2>
+		<rent3>900</rent3>
+		<rent4>1100</rent4>
+		<rent5>1275</rent5>
+	</estate>
+	<estate id="32" name="North Carolina Avenue">
+		<group>6</group>
+		<price>300</price>
+		<rent0>26</rent0>
+		<rent1>130</rent1>
+		<rent2>390</rent2>
+		<rent3>900</rent3>
+		<rent4>1100</rent4>
+		<rent5>1275</rent5>
+	</estate>
+	<estate id="33" name="Community Chest">
+		<takecard>community</takecard>
+		<paytarget>20</paytarget>
+	</estate>
+	<estate id="34" name="Pennsylvania Avenue">
+		<group>6</group>
+		<price>320</price>
+		<rent0>28</rent0>
+		<rent1>150</rent1>
+		<rent2>450</rent2>
+		<rent3>1000</rent3>
+		<rent4>1200</rent4>
+		<rent5>1400</rent5>
+	</estate>
+	<estate id="35" name="Short Line">
+		<group>8</group>
+	</estate>
+	<estate id="36" name="Chance">
+		<takecard>chance</takecard>
+		<paytarget>20</paytarget>
+		<icon>qmark-red.png</icon>
+	</estate>
+	<estate id="37" name="Park Place">
+		<group>7</group>
+		<price>350</price>
+		<rent0>35</rent0>
+		<rent1>175</rent1>
+		<rent2>500</rent2>
+		<rent3>1100</rent3>
+		<rent4>1300</rent4>
+		<rent5>1500</rent5>
+	</estate>
+	<estate id="38" name="Luxury Tax">
+		<tax>75</tax>
+		<paytarget>20</paytarget>
+	</estate>
+	<estate id="39" name="Boardwalk">
+		<group>7</group>
+		<price>400</price>
+		<rent0>50</rent0>
+		<rent1>200</rent1>
+		<rent2>600</rent2>
+		<rent3>1400</rent3>
+		<rent4>1700</rent4>
+		<rent5>2000</rent5>
+	</estate>
+</capigame>

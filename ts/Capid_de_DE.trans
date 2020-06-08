@@ -1,0 +1,374 @@
+%{player} won the auction for %{estate}
+%{player} gewinnt die Auktion f&uuml;r %{estate}
+
+Cannot create game '%{type}'
+Kann Spiel '%{type}' nicht erstellen
+
+You cannot create a game, when you are within a game.
+Sie k&ouml;nnen kein Spiel erstellen, solange Sie in einem Spiel sind.
+
+You are not Master of the game
+Sie sind nicht der Spielleiter
+
+Invalid configid: %{cid}
+Ung&uuml;ltige Konfigurationsnummer: %{cid}
+
+You cannot join the game.
+Sie k&ouml;nnen dem Spiel nicht beitreten.
+
+Game is already full.
+Das Spiel ist bereits voll.
+
+Invalid gameid or you are already in a game.
+Ung&uuml;tige Spielnummer oder Sie sind bereits in einem Spiel.
+
+Invalid gameid.
+Un&uuml;ltige Spielnummer.
+
+Sorry, Capid does not support spectators at the moment.
+Capid unterst&uuml;tzt im Moment keine Zuschauer.
+
+You are not in a game.
+Sie sind in keinem Spiel.
+
+You need at least %{#players} players to start the game.
+Sie brauchen mindestens %{#players} Spieler, um das Spiel zu starten.
+
+Reconnected
+Wiederverbunden
+
+Unknown command.
+Unbekannter Befehl.
+
+Game started.
+Das Spiel hat begonnen.
+
+Turn goes to %{player}.
+%{player} ist am Zug.
+
+Warning: This Server is not marked as stable. It is possible that the server will crash, or do some silly things. Don't use it for official Tournaments. And NEVER let your Nuclear Weapons depend on this buggy server!
+Warnung: Dieser Server ist nciht als stabil gekennzeichnet. Es ist m&ouml;lich dass der Server abst&uuml;rzt oder einige dumme Dinge tut. Benutzen Sie diesen Server nicht f&uuml;r offizielle Tourniere. Und vertrauen Sie NIEMAL Ihre nuklearen Waffen diesem fehlerhaftem Server an!
+
+%{player} rolls %{roll1} and %{roll2}.
+%{player} w&uuml;rfelt %{roll1} und %{roll2}.
+
+%{player} has 3 doubles in row.
+%{player} hat 3 Pasche hinteranander.
+
+You cannot roll at this moment.
+Sie k&ouml;nnen im Moment nicht w&uuml;rfeln.
+
+%{player} passed %{estate} and gets %{money}.
+%{player} &uuml;berquert %{estate} und bekommt %{money}.
+
+%{player} gets %{money} for landing on %{estate}.
+%{player} bekommt %{money} f&uuml; das landen auf %{estate}.
+
+%{player} lands on %{estate}.
+%{player} landed auf %{estate}.
+
+No doubles. stay in jail.
+Kein Pasch. Bleibe im Gef&auml;ngnis.
+
+%{player} buys %{estate}.
+%{player} kauft %{estate}.
+
+You don't have enough money to buy %{estate}.
+Sie haben nicht genug Geld um %{estate} zu kaufen.
+
+%{player} chooses to auction %{estate}.
+%{player} startet eine Auktion f&uuml;r %{estate}.
+
+Invalid auctionid.
+Ung&uuml;ltige Auktionsnummer.
+
+Roll
+Werfen
+
+Use card
+Karte benutzen
+
+Pay
+Bezahlen
+
+%{player} is in jail. Round: %{jailround}
+%{player} ist im Gef&auml;ngnis. Runde: %{jailround}
+
+Invalid parameters.
+Ung&uuml;ltige Parameter.
+
+You need two parameters.
+Sie brauchen zwei Parameter.
+
+Currently there is no auction.
+Gegenw&auml;rtig findet keine Auktion statt.
+
+%{player} selled %{estate}.
+%{player} hat %{estate} verkauft.
+
+You cannot sell mortgaged estates.
+Sie k&ouml;nnen kein Anwesen mit einer Hypothek verkaufen.
+
+You cannot sell an estates with houses on its group.
+Sie k&ouml;nnen kein Anwesen verkaufen, solange sich auf dessen Gruppe ein Haus befindet.
+
+You do not own %{estate}.
+Sie besitzen nicht %{estate}.
+
+Estate not found.
+Anwesen nicht gefunden.
+
+Could not parse estateid.
+Konnte Anwesennummer nicht lesen.
+
+Selling is not allowed in this game.
+Verkaufen ist in diesem Spiel nicht erlaubt.
+
+%{player} chooses to pay %{tax}.
+%{player} hat sich entschieden %{tax} zu zahlen.
+
+%{player} mortgaged %{estate}.
+%{player} hat eine Hypothek auf %{estate} aufgenommen.
+
+%{player} unmortgaged %{estate}.
+%{player} hat die Hypothek auf %{estate} bezahlt.
+
+You cannot toggle mortgage of %{estate}.
+Sie k&ouml;nnen den Hypothekenstatus von %{estate} nicht &auml;ndern.
+
+You need %{money} to unmortgage %{estate}.
+Sie brauchen %{money} um die Hypothek von %{estate} zu bezahlen.
+
+You don't own %{estate}. It is unfair to mortgage other players estates.
+Sie besitzen nicht %{estate}. Es w&auml;re unfair eine Hypothek auf die Anwesen anderer Spieler zu nehmen.
+
+Invalid Estate-ID.
+Ung&uuml;ltige Anwesennummer.
+
+You cannot toggle mortgage while players are moving.
+Sie k&ouml;nnen keine Hypothek aufnehmen oder bezahlen solange sich die Spieler bewegen.
+
+%{player} buys a house on %{estate}.
+%{player} kauft ein Haus auf %{estate}.
+
+%{player} buys a hotel on %{estate}.
+%{player} kauft ein Hotel auf %{estate}.
+
+Cannot buy a house. All houses are selled.
+Kann kein Haus kaufen. Alle H&auml;ser sind verkauft.
+
+Cannot buy a hotel. All hotels are selled.
+Kann kein Hotel kaufen. Alle Hotels sind verkauft.
+
+You need %{money} to buy a house or Hotel on %{estate}.
+Sie brauchen %{money} um ein Haus oder Hotel auf %{estate} zu kaufen.
+
+You cannot buy a house or hotel on %{estate}. Is it really your estate?
+Sie k&ouml;nnen kein Haus oder Hotel auf %{estate} kaufen. Geh&ouml;rt es wirklich Ihnen?
+
+Wait until the movements are finished.
+Bitte warten Sie bis sich alle Spieler bewegt haben.
+
+%{player} buys a houserow on group %{group}.
+%{player} kauft eine Hausreihe auf der Gruppe %{group}.
+
+You need %{money} to buy a houserow on %{group}.
+Sie brauchen %{money} um eine Hausreihe auf %{group} zu kaufen.
+
+You cannot buy a houserow on %{group}.
+Sie k&ouml;nnen keine Hausreihe auf %{group} kaufen.
+
+All houses or hotels are selled.
+Alle H&auml;user oder Hotels sind verkauft.
+
+Invalid Group-ID.
+Ung&uuml;ltige Gruppennummer.
+
+You cannot buy houserows players are moving.
+Sie k&ouml;nnen keine Hausreihe kaufen solange sich die Spieler bewegen.
+
+%{player} sells a house from %{estate}.
+%{player} verkauft ein Haus von %{estate}.
+
+%{player} sells a hotel from %{estate}.
+%{player} verkauft ein Hotel von %{estate}.
+
+You cannot sell a house or hotel from %{estate}.
+Sie k&ouml;nnen kein Haus oder Hotel von %{estate} verkaufen.
+
+You cannot sell houses or hotels while players are moving.
+Sie k&ouml;nnen keine H&auml;user oder Hotels verkaufen, solange sich sie Spieler bewegen.
+
+Yes! Trading with yourself makes sense. But you don't need me to do this.
+Ja! Ein Handel mit Ihnen selbst macht Sinn. Aber Sie brauchen micht nicht, um das zu tun.
+
+Cannont find player with ID %{playerid}.
+Kann Spieler mit der ID %{playerid} nicht finden.
+
+Invalid Player-ID.
+Ung&uuml;ltige Spielernummer.
+
+Nice try. But you should not stop a trade, that you cannot know.
+Netter versuch. Aber Sie sollten keinen Handel stoppen, von dem Sie nichts wissen k&ouml;nnen.
+
+Trade with ID %{tradeid} not found.
+Handel mit der ID %{tradeid} nicht gefunden.
+
+Invalid Trade-ID.
+Ung&uuml;ltige Handelsnummer.
+
+Nice try. But you should not accept trades that you cannot know.
+Netter Versuch. Aber Sie sollten keinen Handel akteptieren, den Sie nicht kennen k&ouml;nnen.
+
+Could not find the trade.
+Konnte den Handel nicht finden.
+
+Invalid Trade-ID or Revision.
+Ung&uuml;ltige Handelsnummer oder Revision.
+
+Unknown Estate-ID.
+Unbekannte Anwesennummer;
+
+You cannot change trade condition of trades that you cannot know.
+Sie k&ouml;nnen die Bedingungen von Handeln nicht &auml;ndern, von denen Sie nichts wissen k&ouml;nnen.
+
+Invalid Trade-ID, Estate-ID or Player-ID.
+Ung&uuml;ltige Handelsnummer, Anwesensnummer oder Spielernummer.
+
+Incorrect number of parameters.
+Falsche Anzahl von Parametern.
+
+Unknown Card-ID.
+Unbekannte Kartennummer.
+
+Invalid Trade-ID, or Player-IDs.
+Ung&uuml;ltige Handelsnummer oder Spielernummern.
+
+You cannot upgrade a spectator in a running game.
+Sie k&ouml;nnen in einem laufendem Spiel keinen Zuschauer zum Spieler machen.
+
+Could not parse Player-ID.
+Konnte Spielernummer nicht lesen.
+
+You cannot kick a player in a running game.
+Sie k&ouml;nnen keinen Spieler in einem laufendem Spiel rauswerfen.
+
+%{player} cheated!!!
+%{player} hat geschummelt!!!
+
+%{player} has payed %{money} and now leaved jail.
+%{player} hat %{money} bezahl und verl&auml; nun das Gef&auml;ngnis.
+
+%{player} must pay %{money}. He/She must raise his/her cash.
+%{player} muss %{money} bezahlen. Er/Sie muss das Geld beschaffen.
+
+Auction
+Versteigern
+
+Do not Buy
+Nicht kaufen
+
+%{player} can buy %{estate}.
+%{player} kann %{estate} kaufen.
+
+Minimum bid is %{money}.
+Minimales Gebot ist %{money}.
+
+You can't bid more than you have.
+Sie k&ouml;nnen mit mehr bieten, als Sie haben.
+
+Too late for bids.
+Es ist zu sp&auml;t f&uuml;r Gebote.
+
+%{player} was so stupid to waste enough money so that he/she can't pay %{estate} anymore.
+%{player} war so bl&ouml; und hat genug Geld verschwendet, dass er/sie %{estate} nicht mehr bezahlen kann.
+
+How the hell can you waste so much money?? If you don't want to have %{estate}, you should not bid for it. Next time i'll let you go bankrupt!
+Wie zur H&ouml;lle kontnen Sie so viel Geld verschwenden?? Wenn Sie %{estate} nicht haben wollen, sollten Sie nicht daf&uuml;r bieten. Das n&auml;chste mal lasse ich Sie bankrott gehen!
+
+%{player} must raise his/her cash to %{money} to pay %{estate}.
+%{player} muss %{money} beschaffen, um %{estate} zu bezahlen.
+
+%{playerfrom} owes %{money} to %{playerto} but is not solvent. %{playerfrom} must raise his/her cash to %{money} frist.
+%{playerfrom} schuldet %{playerto} %{money}, hat aber nciht genug Geld. %{playerfrom} muss das Geld erst beschaffen.
+
+the bank
+der Bank
+
+%{playerfrom} pays %{money} to %{playerto}.
+%{playerfrom} zahlt %{money} an %{playerto}.
+
+All depts settled. Game continues.
+Alle Schulden sind bezahlt. Das Spiel geht weiter.
+
+%{player} rolls doubles and can leave jail.
+%{player} hat ein Pasch gew&uuml;rfelt und kann un das Gef&auml;ngnis verlassen.
+
+%{player} must pay %{taxamount} or %{taxrate}% of his/her assets.
+%{player} muss %{taxamount} oder %{taxrate}% von seinem/ihrem Besitz bezahlen.
+
+Pay %{taxamount}
+%{taxamount} bezahlen
+
+Pay %{taxrate}%
+%{taxrate}% bezahlen
+
+%{player} must pay %{money}.
+%{player} muss %{money} bezahlen.
+
+%{player} already owns it.
+%{player} besitzt es bereits.
+
+%{player1} pays no rent, beacuse %{player2} is in jail.
+%{player1} bezahlt keine Miete, da %{player2} im Gef&auml;ngnis ist.
+
+%{player} pays no rent, because it is mortgaged.
+%{player} zahlt keine Miete, da auf es eine Hypothek aufgenommen wurde.
+
+Found no card.
+Keine Karte gefunden.
+
+%{player} wins with a furtune of %{money}.
+%{player} gewinnt mit einem Verm&ouml;gen von %{money}.
+
+No winner.
+Kein Sieger.
+
+Exit game
+Spiel verlassen
+
+%{player} can roll again.
+%{player} darf nochmal w&uuml;rfeln.
+
+%{player} is bankrupt.
+%{player} ist bankrott.
+
+Free Parking collects fine
+Frei Parken kassiert Geld
+
+Shuffle Cards before taking
+Karten vor dem Ziehen mischen
+
+Enable auctions
+Auktionen zulassen
+
+Double passmoney on exact landing
+Doppeltes Geld bei exakter Landung
+
+Unlimited houses/hotels
+Unbegrenzt H&#228;user und Hotels
+
+Players in jail gets no rent
+Spieler im Gef&#228;ngnis bekommen keine Miete
+
+Allow selling estates
+Besitzt&#252;mer d&#252;rfen verkauft werden
+
+Automate tax decisions
+Steuerentscheidungen automatisieren
+
+Allow spectators
+Zuschauer erlauben
+
+Starting Cash
+Startkapital

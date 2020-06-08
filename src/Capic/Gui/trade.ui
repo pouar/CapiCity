@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trade</class>
+ <widget class="QWidget" name="Trade">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>397</width>
+    <height>333</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Trade</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../../ressources.qrc">
+    <normaloff>:/images/tools/trade.png</normaloff>:/images/tools/trade.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Add Tradeitems:</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Estate</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Card</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>Money</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="cbEstate"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="cbCard"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="spMoney">
+          <property name="maximum">
+           <number>99999</number>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>from</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QComboBox" name="cbCardFrom">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QComboBox" name="cbEstateFrom">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QComboBox" name="cbMoneyFrom"/>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>to</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="5">
+         <widget class="QComboBox" name="cbCardTo"/>
+        </item>
+        <item row="1" column="6">
+         <widget class="QToolButton" name="bAddCard">
+          <property name="toolTip">
+           <string>Add Trade</string>
+          </property>
+          <property name="text">
+           <string notr="true">Add</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../ressources.qrc">
+            <normaloff>:/images/tools/addtrade.png</normaloff>:/images/tools/addtrade.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="5">
+         <widget class="QComboBox" name="cbEstateTo"/>
+        </item>
+        <item row="2" column="5">
+         <widget class="QComboBox" name="cbMoneyTo"/>
+        </item>
+        <item row="0" column="6">
+         <widget class="QToolButton" name="bAddEstate">
+          <property name="toolTip">
+           <string>Add Trade</string>
+          </property>
+          <property name="text">
+           <string notr="true">Add</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../ressources.qrc">
+            <normaloff>:/images/tools/addtrade.png</normaloff>:/images/tools/addtrade.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>16</width>
+            <height>16</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QToolButton" name="bAddMoney">
+          <property name="toolTip">
+           <string>Add Trade</string>
+          </property>
+          <property name="text">
+           <string notr="true">Add</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../ressources.qrc">
+            <normaloff>:/images/tools/addtrade.png</normaloff>:/images/tools/addtrade.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QScrollArea" name="scTrades">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+     <widget class="QWidget" name="scLayout">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>383</width>
+        <height>150</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <layout class="QVBoxLayout" name="layout">
+         <item>
+          <widget class="QWidget" name="anchor" native="true"/>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QLabel" name="lAccepts">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string notr="true">Accepts: &lt;span style=&quot;font-weight:bold&quot;&gt;&lt;span style=&quot;color:#800000&quot;&gt;A&lt;/span&gt;, &lt;span style=&quot;color:#008000&quot;&gt;B&lt;/span&gt;&lt;/span&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="bAccept">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Accept Trade</string>
+       </property>
+       <property name="text">
+        <string notr="true">Accept</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+         <normaloff>:/images/tools/trade.png</normaloff>:/images/tools/trade.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="bReject">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Reject Trade</string>
+       </property>
+       <property name="text">
+        <string notr="true">Reject</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+         <normaloff>:/images/tools/reject.png</normaloff>:/images/tools/reject.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../ressources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

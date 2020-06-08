@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF8"?>
+
+<capigame>
+	<general>
+		<name>Atlantic</name>
+		<description>Rob Kaper's Atlantic</description>
+		<minplayers>2</minplayers>
+		<maxplayers>6</maxplayers>
+		<houses>32</houses>
+		<hotels>16</hotels>
+		<startmoney>2000</startmoney>
+	</general>
+	<board>
+		<go>20</go>
+		<bgcolor>#566fa0</bgcolor>
+	</board>
+	<estategroup id="0" name="European Isles">
+		<color>#4bc1b2</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>50</houseprice>
+	</estategroup>
+	<estategroup id="1" name="Holland">
+		<color>#4bc653</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>100</houseprice>
+	</estategroup>
+	<estategroup id="2" name="West Europe">
+		<color>#d3db60</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>100</houseprice>
+	</estategroup>
+	<estategroup id="3" name="South Europe">
+		<color>#d6ac60</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>150</houseprice>
+	</estategroup>
+	<estategroup id="4" name="Florida">
+		<color>#cc5d5d</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>150</houseprice>
+	</estategroup>
+	<estategroup id="5" name="South East USA">
+		<color>#cc61a3</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>200</houseprice>
+	</estategroup>
+	<estategroup id="6" name="North East USA">
+		<color>#8d63cc</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>200</houseprice>
+	</estategroup>
+	<estategroup id="7" name="Canada">
+		<color>#6092ea</color>
+		<bgcolor>#a6cc9d</bgcolor>
+		<houseprice>300</houseprice>
+	</estategroup>
+	<estategroup id="8" name="Airports">
+		<price>300</price>
+		<bgcolor>#5b7a53</bgcolor>
+		<rentmath>Math.pow(2,${GROUPOWNED})*20</rentmath>
+	</estategroup>
+	<!-- # This might need some explaining. Monopd uses libmath++ to calculate some
+# rents which include run-time variables. Current substitutions available:
+#
+# DICE		amount thrown with dice
+# HOUSES	number of houses on the estate
+# GROUPOWNED	amount of estates of the same group owned
+#
+# At the moment rentmath is only supported for EstateGroups. -->
+	<cardgroup name="Chance">
+		<card>
+			<text>Take a trip to Halifax!</text>
+			<advanceto>23</advanceto>
+		</card>
+		<card>
+			<text>Take a trip to Rotterdam!</text>
+			<advanceto>34</advanceto>
+		</card>
+		<card>
+			<text>You ended last in a beauty contest. Sorry.</text>
+		</card>
+		<card>
+			<text>Happy birthday! Collect 100 from every player.</text>
+			<payeach>-100</payeach>
+		</card>
+		<card>
+			<text>Go forward three places.</text>
+			<advance>3</advance>
+		</card>
+		<card>
+			<text>Advance Token to nearest airport. If unowned you may buy it from bank. If owned, throw dice and pay owner a total ten times the amount thrown.</text>
+			<advancetonextof>Airports</advancetonextof>
+			<roll>1</roll>
+			<rentmath>10*${DICE}</rentmath>
+		</card>
+		<card>
+			<text>Go directly to jail.</text>
+			<tojail>1</tojail>
+		</card>
+		<card>
+			<text>Take a ride on the Reading.</text>
+			<advanceto>5</advanceto>
+		</card>
+		<card>
+			<text>Advance to St. Charles Place.</text>
+			<advanceto>11</advanceto>
+		</card>
+		<card>
+			<text>Your building and loan matures. Collect $150</text>
+			<pay>-150</pay>
+		</card>
+		<card>
+			<text>Pay poor tax of $15</text>
+			<pay>15</pay>
+		</card>
+		<card>
+			<text>Advance token to nearest Airport and pay owner Twice the Rental to which he is entitled. If Railroad is unowned, you may buy it from the bank.</text>
+			<advancetonextof>Airports</advancetonextof>
+			<rentmath>Math.pow(2,${GROUPOWNED})*40</rentmath>
+		</card>
+		<card>
+			<text>Bank pays you dividend of $50</text>
+			<pay>-50</pay>
+		</card>
+		<card>
+			<text>This card may be kept until needed or sold. GET OUT OF JAIL FREE</text>
+			<title>GET OUT OF JAIL FREE</title>
+			<canbeowned>1</canbeowned>
+			<outofjail>1</outofjail>
+		</card>
+		<card>
+			<text>Make General Repairs On All Your Property.  For each house pay $25, For each hotel, $100</text>
+			<payhouse>25</payhouse>
+			<payhotel>100</payhotel>
+		</card>
+		<card>
+			<text>Advance to Go</text>
+			<advanceto>20</advanceto>
+		</card>
+	</cardgroup>
+	
+	<estate id="0" name="Aeropuerto de A Coruña">
+		<group>8</group>
+		<advancetoifowned>11</advancetoifowned>
+	</estate>
+	<estate id="1" name="Bilbao">
+		<group>3</group>
+		<price>220</price>
+		<rent0>18</rent0>
+		<rent1>90</rent1>
+		<rent2>250</rent2>
+		<rent3>700</rent3>
+		<rent4>875</rent4>
+		<rent5>1050</rent5>
+	</estate>
+	<estate id="2" name="Oporto">
+		<group>3</group>
+		<price>220</price>
+		<rent0>18</rent0>
+		<rent1>90</rent1>
+		<rent2>250</rent2>
+		<rent3>700</rent3>
+		<rent4>875</rent4>
+		<rent5>1050</rent5>
+	</estate>
+	<estate id="3" name="Lisbon">
+		<group>3</group>
+		<price>240</price>
+		<rent0>20</rent0>
+		<rent1>100</rent1>
+		<rent2>300</rent2>
+		<rent3>750</rent3>
+		<rent4>925</rent4>
+		<rent5>1100</rent5>
+	</estate>
+	<estate id="4" name="Chance">
+		<takecard>Chance</takecard>
+		<paytarget>35</paytarget>
+	</estate>
+	<estate id="5" name="Go to Jail">
+		<tojail>1</tojail>
+		<bgcolor>#8da0bf</bgcolor>
+	</estate>
+	<estate id="6" name="TODO">
+	</estate>
+	<estate id="7" name="Customs">
+		<tax>150</tax>
+		<taxpercentage>15</taxpercentage>
+		<paytarget>15</paytarget>
+	</estate>
+	<estate id="8" name="Chance">
+		<takecard>Chance</takecard>
+		<paytarget>15</paytarget>
+	</estate>
+	<estate id="9" name="Miami">
+		<group>4</group>
+		<price>260</price>
+		<rent0>22</rent0>
+		<rent1>110</rent1>
+		<rent2>330</rent2>
+		<rent3>800</rent3>
+		<rent4>975</rent4>
+		<rent5>1150</rent5>
+	</estate>
+	<estate id="10" name="Orlando Sanford International Airport">
+		<group>8</group>
+		<advancetoifowned>16</advancetoifowned>
+	</estate>
+	<estate id="11" name="Orlando">
+		<group>4</group>
+		<price>280</price>
+		<rent0>24</rent0>
+		<rent1>120</rent1>
+		<rent2>345</rent2>
+		<rent3>850</rent3>
+		<rent4>1035</rent4>
+		<rent5>1200</rent5>
+	</estate>
+	<estate id="12" name="Savannah">
+		<group>5</group>
+		<price>300</price>
+		<rent0>26</rent0>
+		<rent1>130</rent1>
+		<rent2>390</rent2>
+		<rent3>900</rent3>
+		<rent4>1100</rent4>
+		<rent5>1275</rent5>
+	</estate>
+	<estate id="13" name="Charleston">
+		<group>5</group>
+		<price>300</price>
+		<rent0>26</rent0>
+		<rent1>130</rent1>
+		<rent2>390</rent2>
+		<rent3>900</rent3>
+		<rent4>1100</rent4>
+		<rent5>1275</rent5>
+	</estate>
+	<estate id="14" name="Richmond">
+		<group>5</group>
+		<price>320</price>
+		<rent0>28</rent0>
+		<rent1>150</rent1>
+		<rent2>450</rent2>
+		<rent3>1000</rent3>
+		<rent4>1200</rent4>
+		<rent5>1400</rent5>
+	</estate>
+	<estate id="15" name="U.S. Treasury">
+		<bgcolor>#def2d5</bgcolor>
+		<passmoney>100</passmoney>
+	</estate>
+	<estate id="16" name="Washington">
+		<group>6</group>
+		<price>340</price>
+		<rent0>30</rent0>
+		<rent1>160</rent1>
+		<rent2>470</rent2>
+		<rent3>1050</rent3>
+		<rent4>1270</rent4>
+		<rent5>1450</rent5>
+	</estate>
+	<estate id="17" name="New York">
+		<group>6</group>
+		<price>360</price>
+		<rent0>32</rent0>
+		<rent1>165</rent1>
+		<rent2>490</rent2>
+		<rent3>1090</rent3>
+		<rent4>1320</rent4>
+		<rent5>1520</rent5>
+	</estate>
+	<estate id="18" name="Boston">
+		<group>6</group>
+		<price>360</price>
+		<rent0>32</rent0>
+		<rent1>165</rent1>
+		<rent2>490</rent2>
+		<rent3>1090</rent3>
+		<rent4>1320</rent4>
+		<rent5>1520</rent5>
+	</estate>
+	<estate id="19" name="Portland">
+		<group>6</group>
+		<price>380</price>
+		<rent0>35</rent0>
+		<rent1>180</rent1>
+		<rent2>520</rent2>
+		<rent3>1140</rent3>
+		<rent4>1400</rent4>
+		<rent5>1600</rent5>
+	</estate>
+	<estate id="20" name="Boston Logan International Airport">
+		<group>8</group>
+		<advancetoifowned>28</advancetoifowned>
+	</estate>
+	<estate id="21" name="Toronto">
+		<group>7</group>
+		<price>400</price>
+		<rent0>50</rent0>
+		<rent1>200</rent1>
+		<rent2>600</rent2>
+		<rent3>1400</rent3>
+		<rent4>1700</rent4>
+		<rent5>2000</rent5>
+	</estate>
+	<estate id="22" name="Montreal">
+		<group>7</group>
+		<price>460</price>
+		<rent0>55</rent0>
+		<rent1>230</rent1>
+		<rent2>640</rent2>
+		<rent3>1470</rent3>
+		<rent4>1790</rent4>
+		<rent5>2100</rent5>
+	</estate>
+	<estate id="23" name="Halifax">
+		<group>7</group>
+		<price>500</price>
+		<rent0>60</rent0>
+		<rent1>250</rent1>
+		<rent2>660</rent2>
+		<rent3>1500</rent3>
+		<rent4>1850</rent4>
+		<rent5>2300</rent5>
+	</estate>
+	<estate id="24" name="Chance">
+		<takecard>Chance</takecard>
+		<paytarget>15</paytarget>
+	</estate>
+	<estate id="25" name="Jail">
+		<jail>1</jail>
+		<payamount>50</payamount>
+		<bgcolor>#8da0bf</bgcolor>
+	</estate>
+	<estate id="26" name="TODO">
+	</estate>
+	<estate id="27" name="Customs">
+		<taxpercentage>20</taxpercentage>
+		<paytarget>35</paytarget>
+	</estate>
+	<estate id="28" name="Reykjavik">
+		<group>0</group>
+		<price>40</price>
+		<rent0>1</rent0>
+		<rent1>8</rent1>
+		<rent2>27</rent2>
+		<rent3>85</rent3>
+		<rent4>155</rent4>
+		<rent5>230</rent5>
+	</estate>
+	<estate id="29" name="Edinburgh">
+		<group>0</group>
+		<price>60</price>
+		<rent0>2</rent0>
+		<rent1>10</rent1>
+		<rent2>30</rent2>
+		<rent3>90</rent3>
+		<rent4>160</rent4>
+		<rent5>250</rent5>
+	</estate>
+	<estate id="30" name="London Heathrow Airport">
+		<group>8</group>
+		<advancetoifowned>34</advancetoifowned>
+	</estate>
+	<estate id="31" name="London">
+		<group>0</group>
+		<price>100</price>
+		<rent0>10</rent0>
+		<rent1>13</rent1>
+		<rent2>36</rent2>
+		<rent3>95</rent3>
+		<rent4>166</rent4>
+		<rent5>265</rent5>
+	</estate>
+	<estate id="32" name="Chance">
+		<takecard>Chance</takecard>
+		<paytarget>35</paytarget>
+	</estate>
+	<estate id="33" name="Amsterdam">
+		<group>1</group>
+		<price>100</price>
+		<rent0>10</rent0>
+		<rent1>15</rent1>
+		<rent2>35</rent2>
+		<rent3>98</rent3>
+		<rent4>172</rent4>
+		<rent5>265</rent5>
+	</estate>
+	<estate id="34" name="Rotterdam">
+		<group>1</group>
+		<price>140</price>
+		<rent0>13</rent0>
+		<rent1>21</rent1>
+		<rent2>42</rent2>
+		<rent3>112</rent3>
+		<rent4>180</rent4>
+		<rent5>290</rent5>
+	</estate>
+	<estate id="35" name="European Central Bank">
+		<bgcolor>#def2d5</bgcolor>
+		<passmoney>100</passmoney>
+	</estate>
+	<estate id="36" name="Antwerp">
+		<group>2</group>
+		<price>140</price>
+		<rent0>13</rent0>
+		<rent1>21</rent1>
+		<rent2>42</rent2>
+		<rent3>112</rent3>
+		<rent4>180</rent4>
+		<rent5>290</rent5>
+	</estate>
+	<estate id="37" name="Paris">
+		<group>2</group>
+		<price>160</price>
+		<rent0>16</rent0>
+		<rent1>24</rent1>
+		<rent2>45</rent2>
+		<rent3>120</rent3>
+		<rent4>194</rent4>
+		<rent5>315</rent5>
+	</estate>
+	<estate id="38" name="Bordeaux">
+		<group>2</group>
+		<price>160</price>
+		<rent0>16</rent0>
+		<rent1>24</rent1>
+		<rent2>45</rent2>
+		<rent3>120</rent3>
+		<rent4>194</rent4>
+		<rent5>315</rent5>
+	</estate>
+	<estate id="39" name="La Coruña">
+		<group>3</group>
+		<price>200</price>
+		<rent0>22</rent0>
+		<rent1>97</rent1>
+		<rent2>259</rent2>
+		<rent3>720</rent3>
+		<rent4>895</rent4>
+		<rent5>1125</rent5>
+	</estate>
+</capigame>

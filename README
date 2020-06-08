@@ -1,0 +1,56 @@
+Readme for Capi City:
+
+What is Capi City:
+CapiCity is a Client for the Monopd server.
+You can play Monopoly like games with it.
+Currently Capi City supports Monopd 0.9.3
+
+Current Version: 1
+
+License:
+Capi City (all Header, Source, Game-Confiurations, Translation-Files and Image-Files) is released under GPLv2. See copying.txt for more informaton.
+All Images found in images/avatars/ are taken from Atlanik (a KDE3 Monopd-Client)
+All images found in images/smilies are taken from PHPBB 2.x (a free PHP-Based Forum-Software) 
+
+Useful links:
+Official Homepage:
+http://linux-ecke.de/CapiCity/
+
+Sourceforge Projectpage:
+http://sourceforge.net/projects/capitalism/
+
+Tracker for Bugs, Supprt, etc:
+http://sourceforge.net/tracker/?group_id=300061
+
+How to build and run:
+For building or running you need:
+Qt 4.6+ and Developer-Packages (For building).
+Common buildung tools: g++, make
+
+Buildung:
+qmake
+make
+
+Running:
+./CapiCity
+
+How to make e translation:
+1. Add ts/CapiCity_[landuage-code]_[country-code].ts to the CapiCity.pro
+2. Run lupdate CapiCity.pro in the CapiCity root folder.
+3. Translate. I recomment to use the Qt-Linguist: Start lingusit, open the CapiCity_[language-code]_[country-code].ts and translate it.
+4. Save the translation
+5. Run lrelease CapiCity.pro (in linguist you can use the "Release" action in the file-menu)
+7. Check if all is ok. If not: Go to step 3
+8. After all is ok, you can leave a comment on
+   http://qt-apps.org/content/show.php/Capitalism?content=113173
+
+Note:
+For [language-code] ISO 639-1 is used
+For [country-code] ISO 3166-2 alpha-2 is used
+
+Current aviable translations:
+English
+German
+Finnish
+Polish
+Italian
