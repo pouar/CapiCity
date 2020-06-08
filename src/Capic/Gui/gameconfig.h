@@ -17,7 +17,7 @@
 #ifndef GAMECONFIG_H
 #define GAMECONFIG_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include "gameoption.h"
 
 namespace Ui {

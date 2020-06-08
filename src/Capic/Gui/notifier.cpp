@@ -65,6 +65,7 @@ void Notifier::paintEvent(QPaintEvent *e) {
 
 void Notifier::showNotify(int secs) {
 	this->show();
+	timer->setTimerType(Qt::PreciseTimer);
 	timer->start(1000*secs);
 }
 

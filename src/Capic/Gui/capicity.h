@@ -17,7 +17,7 @@
 #ifndef CAPICITY_H
 #define CAPICITY_H
 
-#include <QtGui/QMainWindow>
+#include <QtWidgets/QMainWindow>
 #include <QTableWidget>
 #include <QStackedLayout>
 #include <QList>

@@ -94,7 +94,7 @@ void Config::save() {
 }
 
 void Config::openFile() {
-	QString fileName = QFileDialog::getOpenFileName(this, tr("Select image"), QDir::homePath(), "*.png; *.jpg; *.gif; *.bmp; *.jpeg");
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Select image"), QDir::homePath(), "Image Files (*.png *.jpg *.gif *.bmp *.jpeg)");
 
 	QImage image(fileName);
 	image = image.scaled(64,64, Qt::KeepAspectRatio);

@@ -4,7 +4,7 @@
 QT += network \
       xml \
       script
-
+QT += widgets
 TARGET = CapiCity
 TEMPLATE = app
 DESTDIR = .

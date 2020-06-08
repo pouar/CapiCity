@@ -17,7 +17,7 @@
 #ifndef PLAYERAUCTION_H
 #define PLAYERAUCTION_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 namespace Ui {
 	class PlayerAuction;

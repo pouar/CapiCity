@@ -17,7 +17,7 @@
 #ifndef PLAYERINFO_H
 #define PLAYERINFO_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 namespace Ui {
 	class PlayerInfo;

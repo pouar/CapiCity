@@ -17,7 +17,7 @@
 #ifndef TRADEITEM_H
 #define TRADEITEM_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 
 namespace Ui {
 	class TradeItem;

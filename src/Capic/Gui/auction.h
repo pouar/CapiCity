@@ -17,7 +17,7 @@
 #ifndef AUCTION_H
 #define AUCTION_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include "playerauction.h"
 
 namespace Ui {

@@ -17,7 +17,7 @@
 #ifndef TRADE_H
 #define TRADE_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include <QVBoxLayout>
 #include <QHash>
 #include "src/Capi/capigame.h"

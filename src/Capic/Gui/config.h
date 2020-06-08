@@ -17,7 +17,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include <QtGui/QDialog>
+#include <QtWidgets/QDialog>
 #include <QSettings>
 
 namespace Ui {

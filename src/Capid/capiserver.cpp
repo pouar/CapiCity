@@ -116,6 +116,7 @@ void CapiServer::init() {
 
 	//Start timer to implement time dependend stuff (eg: auctions)
 	timer = new QTimer(this);
+	timer->setTimerType(Qt::PreciseTimer);
 	timer->start(1000);
 	connect(timer, SIGNAL(timeout()), this, SLOT(tick()));
 

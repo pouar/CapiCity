@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include <QTcpSocket>
 #include <QTranslator>
 #include <QLocale>

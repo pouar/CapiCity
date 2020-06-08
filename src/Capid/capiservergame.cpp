@@ -623,12 +623,12 @@ void CapiServerGame::startGame() {
 		//Players
 		int i = rand()%players.size();
 		int j = rand()%players.size();
-		players.swap(i,j);
+		players.swapItemsAt(i,j);
 
 		//Cards
 		i = rand()%cards.size();
 		j = rand()%cards.size();
-		cards.swap(i,j);
+		cards.swapItemsAt(i,j);
 	}
 
 	//Get the first non spectator
