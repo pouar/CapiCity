@@ -17,174 +17,174 @@
 #include "capiestate.h"
 
 CapiEstate::CapiEstate(int i) : CapiObject(i) {
-	picture = "";
-	money = 0;
-	buyable=false;
-	price = 0;
-	owner = 0;
-	mortageVal = 0;
-	unmortageVal = 0;
-	mortaged=false;
-	canToggleMortage=false;
-	for (int i = 0; i < 6; i++) rent[i] = 0;
-	group = 0;
-	color = "";
-	bgColor = "";
-	housePrice = 0;
-	sellHousePrice = 0;
-	houses = 0;
-	canBuyHouse = false;
-	canSellHouse = false;
-	rent[0] = 0;
+        picture = "";
+        money = 0;
+        buyable=false;
+        price = 0;
+        owner = 0;
+        mortageVal = 0;
+        unmortageVal = 0;
+        mortaged=false;
+        canToggleMortage=false;
+        for (int i = 0; i < 6; i++) rent[i] = 0;
+        group = 0;
+        color = "";
+        bgColor = "";
+        housePrice = 0;
+        sellHousePrice = 0;
+        houses = 0;
+        canBuyHouse = false;
+        canSellHouse = false;
+        rent[0] = 0;
 }
 
 CapiEstate::~CapiEstate() {
 }
 
 QString CapiEstate::getPicture() {
-	return picture;
+        return picture;
 }
 
 int CapiEstate::getMoney() {
-	return money;
+        return money;
 }
 
 bool CapiEstate::getBuyable() {
-	return buyable;
+        return buyable;
 }
 
 int CapiEstate::getPrice() {
-	return price;
+        return price;
 }
 
 CapiPlayer* CapiEstate::getOwner() {
-	return owner;
+        return owner;
 }
 
 int CapiEstate::getMortageVal() {
-	return mortageVal;
+        return mortageVal;
 }
 
 int CapiEstate::getUnmortageVal() {
-	return unmortageVal;
+        return unmortageVal;
 }
 
 bool CapiEstate::getMortaged() {
-	return mortaged;
+        return mortaged;
 }
 
 bool CapiEstate::getCanToggleMortage() {
-	return canToggleMortage;
+        return canToggleMortage;
 }
 
 int CapiEstate::getRent(int i) {
-	if (i < 0) return 0;
-	if (i > 5) return 0;
-	return rent[i];
+        if (i < 0) return 0;
+        if (i > 5) return 0;
+        return rent[i];
 }
 
 CapiGroup* CapiEstate::getGroup() {
-	return group;
+        return group;
 }
 
 QString CapiEstate::getColor() {
-	return color;
+        return color;
 }
 
 QString CapiEstate::getBgColor() {
-	return bgColor;
+        return bgColor;
 }
 
 int CapiEstate::getHousePrice() {
-	return housePrice;
+        return housePrice;
 }
 
 int CapiEstate::getSellHousePrice() {
-	return sellHousePrice;
+        return sellHousePrice;
 }
 
 int CapiEstate::getHouses() {
-	return houses;
+        return houses;
 }
 
 bool CapiEstate::getCanBuyHouse() {
-	return canBuyHouse;
+        return canBuyHouse;
 }
 
 bool CapiEstate::getCanSellHouse() {
-	return canSellHouse;
+        return canSellHouse;
 }
 
 void CapiEstate::setPicture(QString p) {
-	picture = p;
+        picture = p;
 }
 
 void CapiEstate::setMoney(int m) {
-	money = m;
+        money = m;
 }
 
 void CapiEstate::setBuyable(bool b) {
-	buyable = b;
+        buyable = b;
 }
 
 void CapiEstate::setPrice(int p) {
-	price = p;
+        price = p;
 }
 
 void CapiEstate::setOwner(CapiPlayer* p) {
-	owner = p;
+        owner = p;
 }
 
 void CapiEstate::setMortageVal(int mv) {
-	mortageVal=mv;
+        mortageVal=mv;
 }
 
 void CapiEstate::setUnmortageVal(int umv) {
-	unmortageVal=umv;
+        unmortageVal=umv;
 }
 
 void CapiEstate::setMortaged(bool m) {
-	mortaged=m;
+        mortaged=m;
 }
 
 void CapiEstate::setCanToggleMortage(bool ctm) {
-	canToggleMortage=ctm;
+        canToggleMortage=ctm;
 }
 
 void CapiEstate::setRent(int i, int r) {
-	if (i < 0) return;
-	if (i > 5) return;
-	rent[i] = r;
+        if (i < 0) return;
+        if (i > 5) return;
+        rent[i] = r;
 }
 
 void CapiEstate::setGroup(CapiGroup* g) {
-	group = g;
+        group = g;
 }
 
 void CapiEstate::setColor(QString col) {
-	color = col;
+        color = col;
 }
 
 void CapiEstate::setBgColor(QString col) {
-	bgColor = col;
+        bgColor = col;
 }
 
 void CapiEstate::setHousePrice(int hp) {
-	housePrice = hp;
+        housePrice = hp;
 }
 
 void CapiEstate::setSellHousePrice(int shp) {
-	sellHousePrice = shp;
+        sellHousePrice = shp;
 }
 
 void CapiEstate::setHouses(int h) {
-	houses = h;
+        houses = h;
 }
 
 void CapiEstate::setCanBuyHouse(bool cbh) {
-	canBuyHouse = cbh;
+        canBuyHouse = cbh;
 }
 
 void CapiEstate::setCanSellHouse(bool csh) {
-	canSellHouse = csh;
+        canSellHouse = csh;
 }

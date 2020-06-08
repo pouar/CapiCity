@@ -21,19 +21,19 @@
 
 class CapiObject {
 
-	public:
-		CapiObject(int id);
+public:
+        CapiObject(int id);
 
-		int     getId();
-		QString getName();
+        int     getId();
+        QString getName();
 
-		void setId(int i);
-		void setName(QString n);
+        void setId(int i);
+        void setName(QString n);
 
-		inline int toInt(bool b) {if (b) {return 1;} return 0;}
-	protected:
-		int id;
-		QString name;
+        inline int toInt(bool b) {if (b) {return 1;} return 0;}
+protected:
+        int id;
+        QString name;
 };
 
 #endif // CAPIOBJECT_H

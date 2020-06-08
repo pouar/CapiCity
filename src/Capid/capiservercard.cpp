@@ -17,154 +17,154 @@
 #include "capiservercard.h"
 
 CapiServerCard::CapiServerCard(int id) : CapiCard(id) {
-	toJail = false;
-	advanceTo = -1;
-	advance = 0;
-	pay = 0;
-	rentMath = "";
-	advanceToNextOf = "";
-	canBeOwned = false;
-	outOfJail = false;
-	payHouse = 0;
-	payHotel = 0;
-	payEach = 0;
-	roll = false;
-	group = "";
-	text = "";
+        toJail = false;
+        advanceTo = -1;
+        advance = 0;
+        pay = 0;
+        rentMath = "";
+        advanceToNextOf = "";
+        canBeOwned = false;
+        outOfJail = false;
+        payHouse = 0;
+        payHotel = 0;
+        payEach = 0;
+        roll = false;
+        group = "";
+        text = "";
 }
 
 QString CapiServerCard::maskXML(QString txt) {
-	QString msg = txt.replace("&", "&#38;");
-	msg = msg.replace("<", "&#60;");
-	msg = msg.replace(">", "&#62;");
-	msg = msg.replace("=", "&#61;");
-	msg = msg.replace("\"", "&#34;");
-	return msg;
+        QString msg = txt.replace("&", "&#38;");
+        msg = msg.replace("<", "&#60;");
+        msg = msg.replace(">", "&#62;");
+        msg = msg.replace("=", "&#61;");
+        msg = msg.replace("\"", "&#34;");
+        return msg;
 }
 
 bool CapiServerCard::getToJail() {
-	return toJail;
+        return toJail;
 }
 
 int CapiServerCard::getAdvanceTo() {
-	return advanceTo;
+        return advanceTo;
 }
 
 int CapiServerCard::getAdvance() {
-	return advance;
+        return advance;
 }
 
 int CapiServerCard::getPay() {
-	return pay;
+        return pay;
 }
 
 QString CapiServerCard::getRentMath() {
-	return rentMath;
+        return rentMath;
 }
 
 QString CapiServerCard::getAdvanceToNextOf() {
-	return advanceToNextOf;
+        return advanceToNextOf;
 }
 
 bool CapiServerCard::getCanBeOwned() {
-	return canBeOwned;
+        return canBeOwned;
 }
 
 bool CapiServerCard::getOutOfJail() {
-	return outOfJail;
+        return outOfJail;
 }
 
 int CapiServerCard::getPayHouse() {
-	return payHouse;
+        return payHouse;
 }
 
 int CapiServerCard::getPayHotel() {
-	return payHotel;
+        return payHotel;
 }
 
 int CapiServerCard::getPayEach() {
-	return payEach;
+        return payEach;
 }
 
 bool CapiServerCard::getRoll() {
-	return roll;
+        return roll;
 }
 
 QString CapiServerCard::getGroup() {
-	return group;
+        return group;
 }
 
 QString CapiServerCard::getText(QString lang) {
-	if (texts.keys().contains(lang)) return texts.value(lang);
-	return text;
+        if (texts.keys().contains(lang)) return texts.value(lang);
+        return text;
 }
 
 QString CapiServerCard::getUpdate() {
-	int oid = -1;
-	if (getOwner() != 0) oid = getOwner()->getId();
+        int oid = -1;
+        if (getOwner() != 0) oid = getOwner()->getId();
 
-	QString ret = QString("<cardupdate ");
-	ret += QString("cardid=\"%1\" ").arg(getId());
-	ret += QString("title=\"%2\" ").arg(maskXML(getTitle()));
-	ret += QString("owner=\"%3\" ").arg(oid);
-	ret += "/>";
+        QString ret = QString("<cardupdate ");
+        ret += QString("cardid=\"%1\" ").arg(getId());
+        ret += QString("title=\"%2\" ").arg(maskXML(getTitle()));
+        ret += QString("owner=\"%3\" ").arg(oid);
+        ret += "/>";
 
-	return ret;
+        return ret;
 }
 
 void CapiServerCard::setToJail(bool tj) {
-	toJail = tj;
+        toJail = tj;
 }
 
 void CapiServerCard::setAdvanceTo(int at) {
-	advanceTo = at;
+        advanceTo = at;
 }
 
 void CapiServerCard::setAdvance(int a) {
-	advance = a;
+        advance = a;
 }
 
 void CapiServerCard::setPay(int p) {
-	pay = p;
+        pay = p;
 }
 
 void CapiServerCard::setRentMath(QString rm) {
-	rentMath = rm;
+        rentMath = rm;
 }
 
 void CapiServerCard::setAdvanceToNextOf(QString atn) {
-	advanceToNextOf = atn;
+        advanceToNextOf = atn;
 }
 
 void CapiServerCard::setCanBeOwned(bool cbo) {
-	canBeOwned = cbo;
+        canBeOwned = cbo;
 }
 
 void CapiServerCard::setOutOfJail(bool ooj) {
-	outOfJail = ooj;
+        outOfJail = ooj;
 }
 
 void CapiServerCard::setPayHouse(int ph) {
-	payHouse = ph;
+        payHouse = ph;
 }
 
 void CapiServerCard::setPayHotel(int ph) {
-	payHotel = ph;
+        payHotel = ph;
 }
 
 void CapiServerCard::setPayEach(int pe) {
-	payEach = pe;
+        payEach = pe;
 }
 
 void CapiServerCard::setRoll(bool r) {
-	roll = r;
+        roll = r;
 }
 
 void CapiServerCard::setGroup(QString g) {
-	group = g;
+        group = g;
 }
 
 void CapiServerCard::setText(QString t, QString lang) {
-	if (lang.isNull()) text = t;
-	else texts.insert(lang, t);
+        if (lang.isNull()) text = t;
+        else texts.insert(lang, t);
 }

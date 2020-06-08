@@ -20,18 +20,18 @@
 #include <QToolButton>
 
 class CmdToolButton : public QToolButton {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		CmdToolButton(QWidget* parent = 0);
-		~CmdToolButton();
-		QString cmd;
+public:
+        CmdToolButton(QWidget* parent = 0);
+        ~CmdToolButton();
+        QString cmd;
 
-	private slots:
-		void sendCmd();
+private slots:
+        void sendCmd();
 
-	signals:
-		void cmdClicked(QString cmd);
+signals:
+        void cmdClicked(QString cmd);
 };
 
 #endif // CMDTOOLBUTTON_H

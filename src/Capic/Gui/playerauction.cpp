@@ -19,40 +19,40 @@
 #include "ui_playerauction.h"
 
 PlayerAuction::PlayerAuction(QWidget *parent, int avMinHeight) : QWidget(parent), m_ui(new Ui::PlayerAuction) {
-	m_ui->setupUi(this);
-	playerId = -1;
+        m_ui->setupUi(this);
+        playerId = -1;
 
-	m_ui->avatar->setMinimumHeight(avMinHeight);
+        m_ui->avatar->setMinimumHeight(avMinHeight);
 
-	//Under Win StyledPanel does not work
-	#if defined(Q_WS_WIN)
-	m_ui->frame->setFrameShape(QFrame::Panel);
-	#endif
+        //Under Win StyledPanel does not work
+#if defined(Q_WS_WIN)
+        m_ui->frame->setFrameShape(QFrame::Panel);
+#endif
 }
 
 PlayerAuction::~PlayerAuction() {
-	delete m_ui;
+        delete m_ui;
 }
 
 void PlayerAuction::setAvatar(QImage a) {
-	m_ui->avatar->setAvatar(a);
+        m_ui->avatar->setAvatar(a);
 }
 
 void PlayerAuction::setName(QString n) {
-	m_ui->lPlayer->setText(" "+n);
+        m_ui->lPlayer->setText(" "+n);
 }
 
 void PlayerAuction::setMoney(QString m) {
-	m_ui->lMoney->setText("   "+m);
+        m_ui->lMoney->setText("   "+m);
 }
 
 void PlayerAuction::changeEvent(QEvent *e) {
-	QWidget::changeEvent(e);
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			m_ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+        QWidget::changeEvent(e);
+        switch (e->type()) {
+        case QEvent::LanguageChange:
+                m_ui->retranslateUi(this);
+                break;
+        default:
+                break;
+        }
 }

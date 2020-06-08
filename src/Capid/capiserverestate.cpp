@@ -17,162 +17,162 @@
 #include "capiserverestate.h"
 
 CapiServerEstate::CapiServerEstate(int id) : CapiEstate(id) {
-	tax = 0;
-	taxpercent = 0;
-	takeCard = "";
-	passmoney = 0;
-	payTarget = 0;
-	toJail = false;
-	jail = false;
-	payAmount = 0;
-	freeParking = true;
-	go = false;
-	advanceToIfOwned = -1;
+        tax = 0;
+        taxpercent = 0;
+        takeCard = "";
+        passmoney = 0;
+        payTarget = 0;
+        toJail = false;
+        jail = false;
+        payAmount = 0;
+        freeParking = true;
+        go = false;
+        advanceToIfOwned = -1;
 }
 
 QString CapiServerEstate::maskXML(QString txt) {
-	QString msg = txt.replace("&", "&#38;");
-	msg = msg.replace("<", "&#60;");
-	msg = msg.replace(">", "&#62;");
-	msg = msg.replace("=", "&#61;");
-	msg = msg.replace("\"", "&#34;");
-	return msg;
+        QString msg = txt.replace("&", "&#38;");
+        msg = msg.replace("<", "&#60;");
+        msg = msg.replace(">", "&#62;");
+        msg = msg.replace("=", "&#61;");
+        msg = msg.replace("\"", "&#34;");
+        return msg;
 }
 
 QString CapiServerEstate::getName(QString lang) {
-	if (names.keys().contains(lang)) return names.value(lang);
-	return CapiEstate::getName();
+        if (names.keys().contains(lang)) return names.value(lang);
+        return CapiEstate::getName();
 }
 
 int CapiServerEstate::getTax() {
-	return tax;
+        return tax;
 }
 
 int CapiServerEstate::getTaxPercent() {
-	return taxpercent;
+        return taxpercent;
 }
 
 QString CapiServerEstate::getTakeCard() {
-	return takeCard;
+        return takeCard;
 }
 
 int CapiServerEstate::getPassmoney() {
-	return passmoney;
+        return passmoney;
 }
 
 CapiServerEstate* CapiServerEstate::getPayTarget() {
-	return payTarget;
+        return payTarget;
 }
 
 bool CapiServerEstate::getToJail() {
-	return toJail;
+        return toJail;
 }
 
 bool CapiServerEstate::getJail() {
-	return jail;
+        return jail;
 }
 
 int CapiServerEstate::getPayAmount() {
-	return payAmount;
+        return payAmount;
 }
 
 bool CapiServerEstate::getFreeParking() {
-	return freeParking;
+        return freeParking;
 }
 
 bool CapiServerEstate::getGo() {
-	return go;
+        return go;
 }
 
 int CapiServerEstate::getAdvanceToIfOwned() {
-	return advanceToIfOwned;
+        return advanceToIfOwned;
 }
 
 void CapiServerEstate::setName(QString name, QString lang) {
-	if (lang.isNull()) CapiEstate::setName(name);
-	else names.insert(lang, name);
+        if (lang.isNull()) CapiEstate::setName(name);
+        else names.insert(lang, name);
 }
 
 void CapiServerEstate::setTax(int t) {
-	tax = t;
+        tax = t;
 }
 
 void CapiServerEstate::setTaxPercent(int tp) {
-	taxpercent = tp;
+        taxpercent = tp;
 }
 
 void CapiServerEstate::setTakeCard(QString tc) {
-	takeCard = tc;
+        takeCard = tc;
 }
 
 void CapiServerEstate::setPassmoney(int pm) {
-	passmoney = pm;
+        passmoney = pm;
 }
 
 void CapiServerEstate::setPayTarget(CapiServerEstate* te) {
-	payTarget = te;
+        payTarget = te;
 }
 
 void CapiServerEstate::setToJail(bool tj) {
-	toJail = tj;
+        toJail = tj;
 }
 
 void CapiServerEstate::setJail(bool j) {
-	jail = j;
+        jail = j;
 }
 
 void CapiServerEstate::setPayAmount(int pa) {
-	payAmount = pa;
+        payAmount = pa;
 }
 
 void CapiServerEstate::setFreeParking(bool fp) {
-	freeParking = fp;
+        freeParking = fp;
 }
 
 void CapiServerEstate::setGo(bool g) {
-	go = g;
+        go = g;
 }
 
 void CapiServerEstate::setAdvanceToIfOwned(int atio) {
-	advanceToIfOwned = atio;
+        advanceToIfOwned = atio;
 }
 
 void CapiServerEstate::setPrice(int p) {
-	CapiEstate::setPrice(p);
-	setMortageVal(p/2);
-	setUnmortageVal(11*(p/20));
+        CapiEstate::setPrice(p);
+        setMortageVal(p/2);
+        setUnmortageVal(11*(p/20));
 }
 
 QString CapiServerEstate::getUpdate(QString type, QString lang) {
-	QString ret = "<estateupdate ";
-	int oid = -1;
-	if (getOwner() != 0) oid = getOwner()->getId();
-	int gid = -1;
-	if (getGroup() != 0) gid = getGroup()->getId();
+        QString ret = "<estateupdate ";
+        int oid = -1;
+        if (getOwner() != 0) oid = getOwner()->getId();
+        int gid = -1;
+        if (getGroup() != 0) gid = getGroup()->getId();
 
-	ret += "estateid=\""+QString::number(getId())+"\" ";
-	if ((type == "") || (type.contains("name")))                ret += QString("name=\"%1\" ").arg(maskXML(getName(lang)));
-	if ((type == "") || (type.contains("icon")))                ret += QString("icon=\"%1\" ").arg(maskXML(getPicture()));
-	if ((type == "") || (type.contains("owner")))               ret += QString("owner=\"%1\" ").arg(oid);
-	if ((type == "") || (type.contains("houses")))              ret += QString("houses=\"%1\" ").arg(getHouses());
-	if ((type == "") || (type.contains("houseprice")))          ret += QString("houseprice=\"%1\" ").arg(getHousePrice());
-	if ((type == "") || (type.contains("sellhouseprice")))      ret += QString("sellhouseprice=\"%1\" ").arg(getSellHousePrice());
-	if ((type == "") || (type.contains("mortgaged")))           ret += QString("mortgaged=\"%1\" ").arg(getMortaged());
-	if ((type == "") || (type.contains("group")))               ret += QString("group=\"%1\" ").arg(gid);
-	if ((type == "") || (type.contains("can_be_owned")))        ret += QString("can_be_owned=\"%1\" ").arg(getBuyable());
-	if ((type == "") || (type.contains("can_toggle_mortgage"))) ret += QString("can_toggle_mortgage=\"%1\" ").arg(getCanToggleMortage());
-	if ((type == "") || (type.contains("can_buy_houses")))      ret += QString("can_buy_houses=\"%1\" ").arg(getCanBuyHouse());
-	if ((type == "") || (type.contains("can_sell_houses")))     ret += QString("can_sell_houses=\"%1\" ").arg(getCanSellHouse());
-	if ((type == "") || (type.contains("money")))               ret += QString("money=\"%1\" ").arg(getMoney());
-	if ((type == "") || (type.contains("price")))               ret += QString("price=\"%1\" ").arg(getPrice());
-	if ((type == "") || (type.contains("mortgageprice")))       ret += QString("mortgageprice=\"%1\" ").arg(getMortageVal());
-	if ((type == "") || (type.contains("unmortgageprice")))     ret += QString("unmortgageprice=\"%1\" ").arg(getUnmortageVal());
-	if (((type == "") || (type.contains("color"))) && (color != "")) ret += QString("color=\"%1\" ").arg(getColor());
-	if (((type == "") || (type.contains("bgcolor"))) && (bgColor != "")) ret += QString("bgcolor=\"%1\" ").arg(getBgColor());
-	if ((type == "") || (type.contains("rent"))) {
-		for (int i = 0; i < 6; i++)
-		ret += QString("rent%1=\"%2\" ").arg(i).arg(getRent(i));
-	}
-	ret += "/>";
-	return ret;
+        ret += "estateid=\""+QString::number(getId())+"\" ";
+        if ((type == "") || (type.contains("name")))                ret += QString("name=\"%1\" ").arg(maskXML(getName(lang)));
+        if ((type == "") || (type.contains("icon")))                ret += QString("icon=\"%1\" ").arg(maskXML(getPicture()));
+        if ((type == "") || (type.contains("owner")))               ret += QString("owner=\"%1\" ").arg(oid);
+        if ((type == "") || (type.contains("houses")))              ret += QString("houses=\"%1\" ").arg(getHouses());
+        if ((type == "") || (type.contains("houseprice")))          ret += QString("houseprice=\"%1\" ").arg(getHousePrice());
+        if ((type == "") || (type.contains("sellhouseprice")))      ret += QString("sellhouseprice=\"%1\" ").arg(getSellHousePrice());
+        if ((type == "") || (type.contains("mortgaged")))           ret += QString("mortgaged=\"%1\" ").arg(getMortaged());
+        if ((type == "") || (type.contains("group")))               ret += QString("group=\"%1\" ").arg(gid);
+        if ((type == "") || (type.contains("can_be_owned")))        ret += QString("can_be_owned=\"%1\" ").arg(getBuyable());
+        if ((type == "") || (type.contains("can_toggle_mortgage"))) ret += QString("can_toggle_mortgage=\"%1\" ").arg(getCanToggleMortage());
+        if ((type == "") || (type.contains("can_buy_houses")))      ret += QString("can_buy_houses=\"%1\" ").arg(getCanBuyHouse());
+        if ((type == "") || (type.contains("can_sell_houses")))     ret += QString("can_sell_houses=\"%1\" ").arg(getCanSellHouse());
+        if ((type == "") || (type.contains("money")))               ret += QString("money=\"%1\" ").arg(getMoney());
+        if ((type == "") || (type.contains("price")))               ret += QString("price=\"%1\" ").arg(getPrice());
+        if ((type == "") || (type.contains("mortgageprice")))       ret += QString("mortgageprice=\"%1\" ").arg(getMortageVal());
+        if ((type == "") || (type.contains("unmortgageprice")))     ret += QString("unmortgageprice=\"%1\" ").arg(getUnmortageVal());
+        if (((type == "") || (type.contains("color"))) && (color != "")) ret += QString("color=\"%1\" ").arg(getColor());
+        if (((type == "") || (type.contains("bgcolor"))) && (bgColor != "")) ret += QString("bgcolor=\"%1\" ").arg(getBgColor());
+        if ((type == "") || (type.contains("rent"))) {
+                for (int i = 0; i < 6; i++)
+                        ret += QString("rent%1=\"%2\" ").arg(i).arg(getRent(i));
+        }
+        ret += "/>";
+        return ret;
 }

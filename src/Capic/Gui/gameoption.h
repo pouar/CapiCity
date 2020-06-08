@@ -20,20 +20,20 @@
 #include <QWidget>
 
 class GameOption : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		GameOption(QString cmd, QString txt, QWidget* parent = 0);
-		QString getCommand();
-		virtual void setValue(QString value) = 0;
-		virtual void setText(QString txt) = 0;
+public:
+        GameOption(QString cmd, QString txt, QWidget* parent = 0);
+        QString getCommand();
+        virtual void setValue(QString value) = 0;
+        virtual void setText(QString txt) = 0;
 
-	protected:
-		QString command;
-		QString text;
+protected:
+        QString command;
+        QString text;
 
-	signals:
-		void optionChanged(QString cmd);
+signals:
+        void optionChanged(QString cmd);
 };
 
 #endif // GAMEOPTION_H

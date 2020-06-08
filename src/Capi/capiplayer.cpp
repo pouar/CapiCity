@@ -20,131 +20,131 @@
 #include "capiplayer.h"
 
 CapiPlayer::CapiPlayer(int i) : CapiObject(i) {
-	game = 0;
-	avatar = "bell.png";
-	money = 0;
-	pos = 0;
-	inJail = false;
-	hasTurn = false;
-	canRoll = false;
-	canBuyEstate = false;
-	spectator = false;
-	hasDept = false;
-	canAuction = false;
-	canUseCard = false;
+        game = 0;
+        avatar = "bell.png";
+        money = 0;
+        pos = 0;
+        inJail = false;
+        hasTurn = false;
+        canRoll = false;
+        canBuyEstate = false;
+        spectator = false;
+        hasDept = false;
+        canAuction = false;
+        canUseCard = false;
 }
 
 CapiPlayer::~CapiPlayer() {
 }
 
 CapiGame* CapiPlayer::getGame() {
-	return game;
+        return game;
 }
 
 QString CapiPlayer::getAvatar() {
-	return avatar;
+        return avatar;
 }
 
 int CapiPlayer::getMoney() {
-	return money;
+        return money;
 }
 
 int CapiPlayer::getPos() {
-	return pos;
+        return pos;
 }
 
 bool CapiPlayer::getInJail() {
-	return inJail;
+        return inJail;
 }
 
 bool CapiPlayer::getHasTurn() {
-	return hasTurn;
+        return hasTurn;
 }
 
 bool CapiPlayer::getCanRoll() {
-	return canRoll;
+        return canRoll;
 }
 
 bool CapiPlayer::getCanBuyEstate() {
-	return canBuyEstate;
+        return canBuyEstate;
 }
 
 bool CapiPlayer::getSpectator() {
-	return spectator;
+        return spectator;
 }
 
 bool CapiPlayer::getHasDept() {
-	return hasDept;
+        return hasDept;
 }
 
 bool CapiPlayer::getCanAuction() {
-	return canAuction;
+        return canAuction;
 }
 
 bool CapiPlayer::getCanUseCard() {
-	return canUseCard;
+        return canUseCard;
 }
 
 bool CapiPlayer::getBankrupt() {
-	return bankrupt;
+        return bankrupt;
 }
 
 bool  CapiPlayer::getDirectmove() {
-	return directmove;
+        return directmove;
 }
 
 void CapiPlayer::setGame(CapiGame* g) {
-	game = g;
+        game = g;
 }
 
 void CapiPlayer::setAvatar(QString a) {
-	avatar = a;
+        avatar = a;
 }
 
 void CapiPlayer::setMoney(int m) {
-	money = m;
+        money = m;
 }
 
 void CapiPlayer::setPos(int p) {
-	pos = p;
+        pos = p;
 }
 
 void CapiPlayer::setInJail(bool j) {
-	inJail = j;
+        inJail = j;
 }
 
 void CapiPlayer::setHasTurn(bool ht) {
-	hasTurn = ht;
+        hasTurn = ht;
 }
 
 void CapiPlayer::setCanRoll(bool cr) {
-	canRoll = cr;
+        canRoll = cr;
 }
 
 void CapiPlayer::setCanBuyEstate(bool cbe) {
-	canBuyEstate = cbe;
+        canBuyEstate = cbe;
 }
 
 void CapiPlayer::setSpectator(bool s) {
-	spectator = s;
+        spectator = s;
 }
 
 void CapiPlayer::setHasDept(bool hd) {
-	hasDept = hd;
+        hasDept = hd;
 }
 
 void CapiPlayer::setCanAuction(bool ca) {
-	canAuction = ca;
+        canAuction = ca;
 }
 
 void CapiPlayer::setCanUseCard(bool cuc) {
-	canUseCard = cuc;
+        canUseCard = cuc;
 }
 
 void CapiPlayer::setBankrupt(bool b) {
-	bankrupt = b;
+        bankrupt = b;
 }
 
 void CapiPlayer::setDirectmove(bool dm) {
-	directmove = dm;
+        directmove = dm;
 }

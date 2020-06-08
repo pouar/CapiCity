@@ -23,58 +23,58 @@
 
 class CapiServerCard : public CapiCard {
 
-	public:
-		CapiServerCard(int id);
+public:
+        CapiServerCard(int id);
 
-		bool    getToJail();
-		int     getAdvanceTo();
-		int     getAdvance();
-		int     getPay();
-		QString getRentMath();
-		QString getAdvanceToNextOf();
-		bool    getCanBeOwned();
-		bool    getOutOfJail();
-		int     getPayHouse();
-		int     getPayHotel();
-		int     getPayEach();
-		bool    getRoll();
-		QString getGroup();
-		QString getText(QString lang=QString());
+        bool    getToJail();
+        int     getAdvanceTo();
+        int     getAdvance();
+        int     getPay();
+        QString getRentMath();
+        QString getAdvanceToNextOf();
+        bool    getCanBeOwned();
+        bool    getOutOfJail();
+        int     getPayHouse();
+        int     getPayHotel();
+        int     getPayEach();
+        bool    getRoll();
+        QString getGroup();
+        QString getText(QString lang=QString());
 
-		void setToJail(bool tj);
-		void setAdvanceTo(int at);
-		void setAdvance(int a);
-		void setPay(int p);
-		void setRentMath(QString rm);
-		void setAdvanceToNextOf(QString atn);
-		void setCanBeOwned(bool cbo);
-		void setOutOfJail(bool ooj);
-		void setPayHouse(int ph);
-		void setPayHotel(int ph);
-		void setPayEach(int pe);
-		void setRoll(bool r);
-		void setGroup(QString g);
-		void setText(QString text, QString lang=QString());
+        void setToJail(bool tj);
+        void setAdvanceTo(int at);
+        void setAdvance(int a);
+        void setPay(int p);
+        void setRentMath(QString rm);
+        void setAdvanceToNextOf(QString atn);
+        void setCanBeOwned(bool cbo);
+        void setOutOfJail(bool ooj);
+        void setPayHouse(int ph);
+        void setPayHotel(int ph);
+        void setPayEach(int pe);
+        void setRoll(bool r);
+        void setGroup(QString g);
+        void setText(QString text, QString lang=QString());
 
-		QString getUpdate();
-		QString maskXML(QString txt);
+        QString getUpdate();
+        QString maskXML(QString txt);
 
-	private:
-		QMap <QString, QString> texts;
-		bool    toJail;
-		int     advanceTo;
-		int     advance;
-		int     pay;
-		QString rentMath;
-		QString advanceToNextOf;
-		bool    canBeOwned;
-		bool    outOfJail;
-		int     payHouse;
-		int     payHotel;
-		int     payEach;
-		bool    roll;
-		QString group;
-		QString text;
+private:
+        QMap <QString, QString> texts;
+        bool    toJail;
+        int     advanceTo;
+        int     advance;
+        int     pay;
+        QString rentMath;
+        QString advanceToNextOf;
+        bool    canBeOwned;
+        bool    outOfJail;
+        int     payHouse;
+        int     payHotel;
+        int     payEach;
+        bool    roll;
+        QString group;
+        QString text;
 };
 
 #endif // CAPISERVERCARD_H

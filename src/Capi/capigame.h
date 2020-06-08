@@ -32,52 +32,52 @@ class CapiPlayer;
 
 class CapiGame : public CapiTemplate {
 
-	public:
-		CapiGame(int id);
-		~CapiGame();
+public:
+        CapiGame(int id);
+        ~CapiGame();
 
-		CapiEstate* getEstate(int id, bool create=true);
-		CapiGroup* getGroup(int id, QString name = "", bool create=true);
-		CapiPlayer* getPlayer(int id, bool create=true);
-		CapiPlayer* getPlayerFromList(int num);
-		bool    hasPlayer(int id);
-		CapiCard* getCard(int id, bool create=true);
-		CapiCard* getCardFromList(int i);
-		QString getStatus();
-		bool    getCanBeJoined();
-		int     getNumPlayer();
-		int     getMinPlayer();
-		int     getMaxPlayer();
-		CapiPlayer* getMaster();
-		bool getSellEnabled();
+        CapiEstate* getEstate(int id, bool create=true);
+        CapiGroup* getGroup(int id, QString name = "", bool create=true);
+        CapiPlayer* getPlayer(int id, bool create=true);
+        CapiPlayer* getPlayerFromList(int num);
+        bool    hasPlayer(int id);
+        CapiCard* getCard(int id, bool create=true);
+        CapiCard* getCardFromList(int i);
+        QString getStatus();
+        bool    getCanBeJoined();
+        int     getNumPlayer();
+        int     getMinPlayer();
+        int     getMaxPlayer();
+        CapiPlayer* getMaster();
+        bool getSellEnabled();
 
-		int getNumEstates();
-		int getNumCards();
+        int getNumEstates();
+        int getNumCards();
 
-		void addPlayer(CapiPlayer* p);
-		void removePlayer(CapiPlayer* p);
+        void addPlayer(CapiPlayer* p);
+        void removePlayer(CapiPlayer* p);
 
-		void setStatus(QString st);
-		void setCanBeJoined(bool cbj);
-		void setNumPlayer(int np);
-		void setMinPlayer(int mp);
-		void setMaxPlayer(int mp);
-		void setMaster(CapiPlayer* m);
-		void setSellEnabled(int se);
+        void setStatus(QString st);
+        void setCanBeJoined(bool cbj);
+        void setNumPlayer(int np);
+        void setMinPlayer(int mp);
+        void setMaxPlayer(int mp);
+        void setMaster(CapiPlayer* m);
+        void setSellEnabled(int se);
 
-	protected:
-		QList<CapiEstate*> estates;
-		QList<CapiGroup*> groups;
-		QList<CapiPlayer*> players;
-		QList<CapiCard*> cards;
+protected:
+        QList<CapiEstate*> estates;
+        QList<CapiGroup*> groups;
+        QList<CapiPlayer*> players;
+        QList<CapiCard*> cards;
 
-		QString status;
-		bool canBeJoined;
-		int numPlayer;
-		int minPlayer;
-		int maxPlayer;
-		CapiPlayer* master;
-		bool sellEnabled;
+        QString status;
+        bool canBeJoined;
+        int numPlayer;
+        int minPlayer;
+        int maxPlayer;
+        CapiPlayer* master;
+        bool sellEnabled;
 };
 
 #endif // CAPIGAME_H

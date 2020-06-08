@@ -23,31 +23,31 @@
 
 class CapiServerGroup : public CapiGroup {
 
-	public:
-		CapiServerGroup(int id, QString n);
+public:
+        CapiServerGroup(int id, QString n);
 
-		QString getName(QString lang=QString());
-		QString getColor();
-		QString getBgColor();
-		int     getHousePrice();
-		int     getPrice();
-		QString getRentMath();
-		QString maskXML(QString txt);
+        QString getName(QString lang=QString());
+        QString getColor();
+        QString getBgColor();
+        int     getHousePrice();
+        int     getPrice();
+        QString getRentMath();
+        QString maskXML(QString txt);
 
-		void setName(QString name, QString lang=QString());
-		void setColor(QString col);
-		void setBgColor(QString bgcol);
-		void setHousePrice(int hp);
-		void setPrice(int p);
-		void setRentMath(QString rm);
+        void setName(QString name, QString lang=QString());
+        void setColor(QString col);
+        void setBgColor(QString bgcol);
+        void setHousePrice(int hp);
+        void setPrice(int p);
+        void setRentMath(QString rm);
 
-	private:
-		QMap<QString, QString> names;
-		QString color;
-		QString bgColor;
-		int housePrice;
-		int price;
-		QString rentMath;
+private:
+        QMap<QString, QString> names;
+        QString color;
+        QString bgColor;
+        int housePrice;
+        int price;
+        QString rentMath;
 
 };
 

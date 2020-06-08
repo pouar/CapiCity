@@ -19,24 +19,24 @@
 #include "playeravatar.h"
 
 PlayerAvatar::PlayerAvatar(QWidget* parent) : QWidget(parent) {
-	jailed = false;
-	spectating = false;
+        jailed = false;
+        spectating = false;
 }
 
 void PlayerAvatar::setAvatar(QImage a) {
-	avatar = a;
-	update();
+        avatar = a;
+        update();
 }
 
 void PlayerAvatar::paintEvent(QPaintEvent* pe) {
-	QPainter p(this);
-	int px = (width()-height())/2;
-	p.drawImage(QRect(px, 0, height(), height()), avatar);
-	if (jailed)
-		p.drawPixmap(px,0, height(), height(), QPixmap(":/images/field/jailed.png"));
+        QPainter p(this);
+        int px = (width()-height())/2;
+        p.drawImage(QRect(px, 0, height(), height()), avatar);
+        if (jailed)
+                p.drawPixmap(px,0, height(), height(), QPixmap(":/images/field/jailed.png"));
 
-	if (spectating)
-		p.drawPixmap(px+height()/2, 3*height()/4, height()/2, height()/4, QPixmap(":/images/avatars/spectating.png"));
+        if (spectating)
+                p.drawPixmap(px+height()/2, 3*height()/4, height()/2, height()/4, QPixmap(":/images/avatars/spectating.png"));
 
-	pe->accept();
+        pe->accept();
 }

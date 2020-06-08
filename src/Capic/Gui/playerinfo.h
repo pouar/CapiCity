@@ -20,44 +20,44 @@
 #include <QtWidgets/QWidget>
 
 namespace Ui {
-	class PlayerInfo;
+        class PlayerInfo;
 }
 
 class PlayerInfo : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		PlayerInfo(QWidget *parent = 0, int avMinHeight= 0);
-		~PlayerInfo();
-		void setAvatar(QImage a);
-		void setJailed(bool j);
-		void setSpectator(bool spec);
-		void setName(QString n);
-		void setMoney(QString m);
-		void resetButtons();
-		void resetShowButton();
-		void setTradeButtonVisible(bool vis=true);
-		void setShowButtonVisible(bool vis=true);
-		void setEstateButtonVisible(bool vis=true);
-		void setMoneyVisible(bool vis=true);
+public:
+        PlayerInfo(QWidget *parent = 0, int avMinHeight= 0);
+        ~PlayerInfo();
+        void setAvatar(QImage a);
+        void setJailed(bool j);
+        void setSpectator(bool spec);
+        void setName(QString n);
+        void setMoney(QString m);
+        void resetButtons();
+        void resetShowButton();
+        void setTradeButtonVisible(bool vis=true);
+        void setShowButtonVisible(bool vis=true);
+        void setEstateButtonVisible(bool vis=true);
+        void setMoneyVisible(bool vis=true);
 
-		void setEstateText(QString txt);
-		int playerId;
+        void setEstateText(QString txt);
+        int playerId;
 
-	protected:
-		void changeEvent(QEvent* e);
-	
-	private:
-		Ui::PlayerInfo *m_ui;
+protected:
+        void changeEvent(QEvent* e);
+        
+private:
+        Ui::PlayerInfo *m_ui;
 
-	private slots:
-		void beginTrade();
-		void emitShow();
-		void showEstateLabel();
+private slots:
+        void beginTrade();
+        void emitShow();
+        void showEstateLabel();
 
-	signals:
-		void command(QString cmd);
-		void showed(int pid);
+signals:
+        void command(QString cmd);
+        void showed(int pid);
 };
 
 #endif // PLAYERINFO_H

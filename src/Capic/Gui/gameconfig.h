@@ -21,37 +21,37 @@
 #include "gameoption.h"
 
 namespace Ui {
-	class GameConfig;
+        class GameConfig;
 }
 
 class GameConfig : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		GameConfig(QWidget *parent = 0);
-		~GameConfig();
-		void removeAllOptions();
-		void setDesc(QString desc);
+public:
+        GameConfig(QWidget *parent = 0);
+        ~GameConfig();
+        void removeAllOptions();
+        void setDesc(QString desc);
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	private:
-		Ui::GameConfig *m_ui;
-		QList<GameOption*> gameOptions;
-		GameOption* getOption(QString cmd, QString type="");
-		bool enabled;
+private:
+        Ui::GameConfig *m_ui;
+        QList<GameOption*> gameOptions;
+        GameOption* getOption(QString cmd, QString type="");
+        bool enabled;
 
-	private slots:
-		void emitCommand(QString cmd);
-		void emitDescChange();
+private slots:
+        void emitCommand(QString cmd);
+        void emitDescChange();
 
-	public slots:
-		void configUpdate(QString cmd, QString text, QString type, QString value);
-		void setOptionsEnabled(bool eenabled);
+public slots:
+        void configUpdate(QString cmd, QString text, QString type, QString value);
+        void setOptionsEnabled(bool eenabled);
 
-	signals:
-		void optionChanged(QString cmd);
+signals:
+        void optionChanged(QString cmd);
 };
 
 #endif // GAMECONFIG_H

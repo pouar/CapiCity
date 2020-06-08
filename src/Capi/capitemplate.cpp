@@ -17,22 +17,22 @@
 #include "capitemplate.h"
 
 CapiTemplate::CapiTemplate() : CapiObject(-1) {
-	type = "";
-	desc = "";
+        type = "";
+        desc = "";
 }
 
 QString CapiTemplate::getType() {
-	return type;
+        return type;
 }
 
 QString CapiTemplate::getDesc() {
-	return desc;
+        return desc;
 }
 
 void CapiTemplate::setType(QString t) {
-	type = t;
+        type = t;
 }
 
 void CapiTemplate::setDesc(QString d) {
-	desc = d;
+        desc = d;
 }

@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GameBoolOption</class>
- <widget class="QWidget" name="GameBoolOption">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>400</width>
-    <height>31</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string notr="true">Form</string>
-  </property>
-  <layout class="QHBoxLayout" name="horizontalLayout">
-   <item>
-    <widget class="QCheckBox" name="cbOption">
-     <property name="toolTip">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string notr="true">CheckBox</string>
-     </property>
-     <property name="shortcut">
-      <string notr="true"/>
-     </property>
-    </widget>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+  <class>GameBoolOption</class>
+  <widget class="QWidget" name="GameBoolOption">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>400</width>
+        <height>31</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string notr="true">Form</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+        <widget class="QCheckBox" name="cbOption">
+          <property name="toolTip">
+            <string notr="true"/>
+          </property>
+          <property name="text">
+            <string notr="true">CheckBox</string>
+          </property>
+          <property name="shortcut">
+            <string notr="true"/>
+          </property>
+        </widget>
+      </item>
+    </layout>
+  </widget>
+  <resources/>
+  <connections/>
 </ui>

@@ -20,19 +20,19 @@
 #include <QWidget>
 
 class PlayerAvatar : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		PlayerAvatar(QWidget* parent=0);
-		void setAvatar(QImage a);
-		bool jailed;
-		bool spectating;
+public:
+        PlayerAvatar(QWidget* parent=0);
+        void setAvatar(QImage a);
+        bool jailed;
+        bool spectating;
 
-	protected:
-		void paintEvent(QPaintEvent* pe);
+protected:
+        void paintEvent(QPaintEvent* pe);
 
-	private:
-		QImage avatar;
+private:
+        QImage avatar;
 
 };
 

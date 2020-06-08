@@ -1,877 +1,877 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CapiCity</class>
- <widget class="QMainWindow" name="CapiCity">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>1014</width>
-    <height>600</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Capi City</string>
-  </property>
-  <property name="windowIcon">
-   <iconset resource="../../../ressources.qrc">
-    <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
-  </property>
-  <property name="iconSize">
-   <size>
-    <width>64</width>
-    <height>64</height>
-   </size>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_5">
-    <item>
-     <layout class="QVBoxLayout" name="center"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1014</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuAbout">
-    <property name="title">
-     <string>Help</string>
+  <class>CapiCity</class>
+  <widget class="QMainWindow" name="CapiCity">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1014</width>
+        <height>600</height>
+      </rect>
     </property>
-    <addaction name="acAbout"/>
-   </widget>
-   <widget class="QMenu" name="menuSettings">
-    <property name="title">
-     <string>Settings</string>
+    <property name="windowTitle">
+      <string>Capi City</string>
     </property>
-    <widget class="QMenu" name="menuView">
-     <property name="title">
-      <string>View</string>
-     </property>
-     <addaction name="acViewPlayers"/>
-     <addaction name="acViewTurn"/>
-     <addaction name="acViewMessages"/>
-     <addaction name="acViewChat"/>
-     <addaction name="separator"/>
-     <addaction name="acLockLayout"/>
-    </widget>
-    <addaction name="menuView"/>
-    <addaction name="acConfig"/>
-    <addaction name="acShowMenuBar"/>
-   </widget>
-   <widget class="QMenu" name="menuTurn">
-    <property name="title">
-     <string>Turn</string>
-    </property>
-    <widget class="QMenu" name="menuJail">
-     <property name="title">
-      <string>Jail</string>
-     </property>
-     <property name="icon">
+    <property name="windowIcon">
       <iconset resource="../../../ressources.qrc">
-       <normaloff>:/images/field/jailed.png</normaloff>:/images/field/jailed.png</iconset>
-     </property>
-     <addaction name="acJailRoll"/>
-     <addaction name="acJailCard"/>
-     <addaction name="acJailPay"/>
-    </widget>
-    <addaction name="acRoll"/>
-    <addaction name="acAutoRoll"/>
-    <addaction name="acBuy"/>
-    <addaction name="acAuction"/>
-    <addaction name="acEndTurn"/>
-    <addaction name="menuJail"/>
-   </widget>
-   <widget class="QMenu" name="menuGame">
-    <property name="title">
-     <string>Game</string>
+      <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
     </property>
-    <addaction name="acSearch"/>
-    <addaction name="acLeaveGame"/>
-    <addaction name="acDisconnect"/>
-    <addaction name="separator"/>
-    <addaction name="acExitCapiCity"/>
-   </widget>
-   <addaction name="menuGame"/>
-   <addaction name="menuTurn"/>
-   <addaction name="menuSettings"/>
-   <addaction name="menuAbout"/>
-  </widget>
-  <widget class="QDockWidget" name="dockPlayers">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>270</width>
-     <height>250</height>
-    </size>
-   </property>
-   <property name="windowIcon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Players</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockPlayersWidget">
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QScrollArea" name="scrollArea">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Sunken</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy">
-        <enum>Qt::ScrollBarAsNeeded</enum>
-       </property>
-       <property name="widgetResizable">
-        <bool>true</bool>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-       </property>
-       <widget class="QWidget" name="scrollAreaWidgetContents">
-        <property name="geometry">
-         <rect>
+    <property name="iconSize">
+      <size>
+        <width>64</width>
+        <height>64</height>
+      </size>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+          <layout class="QVBoxLayout" name="center"/>
+        </item>
+      </layout>
+    </widget>
+    <widget class="QMenuBar" name="menubar">
+      <property name="geometry">
+        <rect>
           <x>0</x>
           <y>0</y>
-          <width>250</width>
-          <height>216</height>
-         </rect>
+          <width>1014</width>
+          <height>20</height>
+        </rect>
+      </property>
+      <widget class="QMenu" name="menuAbout">
+        <property name="title">
+          <string>Help</string>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_4">
-         <item>
-          <layout class="QVBoxLayout" name="playerInfos">
-           <item>
-            <widget class="QWidget" name="anchor" native="true"/>
-           </item>
-           <item>
-            <spacer name="verticalSpacer">
-             <property name="orientation">
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </widget>
+        <addaction name="acAbout"/>
       </widget>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="dockChat">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="font">
-    <font>
-     <weight>50</weight>
-     <bold>false</bold>
-     <kerning>false</kerning>
-    </font>
-   </property>
-   <property name="windowIcon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Chat</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>2</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_3">
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QTextBrowser" name="chat">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
+      <widget class="QMenu" name="menuSettings">
+        <property name="title">
+          <string>Settings</string>
+        </property>
+        <widget class="QMenu" name="menuView">
+          <property name="title">
+            <string>View</string>
+          </property>
+          <addaction name="acViewPlayers"/>
+          <addaction name="acViewTurn"/>
+          <addaction name="acViewMessages"/>
+          <addaction name="acViewChat"/>
+          <addaction name="separator"/>
+          <addaction name="acLockLayout"/>
+        </widget>
+        <addaction name="menuView"/>
+        <addaction name="acConfig"/>
+        <addaction name="acShowMenuBar"/>
+      </widget>
+      <widget class="QMenu" name="menuTurn">
+        <property name="title">
+          <string>Turn</string>
+        </property>
+        <widget class="QMenu" name="menuJail">
+          <property name="title">
+            <string>Jail</string>
+          </property>
+          <property name="icon">
+            <iconset resource="../../../ressources.qrc">
+            <normaloff>:/images/field/jailed.png</normaloff>:/images/field/jailed.png</iconset>
+          </property>
+          <addaction name="acJailRoll"/>
+          <addaction name="acJailCard"/>
+          <addaction name="acJailPay"/>
+        </widget>
+        <addaction name="acRoll"/>
+        <addaction name="acAutoRoll"/>
+        <addaction name="acBuy"/>
+        <addaction name="acAuction"/>
+        <addaction name="acEndTurn"/>
+        <addaction name="menuJail"/>
+      </widget>
+      <widget class="QMenu" name="menuGame">
+        <property name="title">
+          <string>Game</string>
+        </property>
+        <addaction name="acSearch"/>
+        <addaction name="acLeaveGame"/>
+        <addaction name="acDisconnect"/>
+        <addaction name="separator"/>
+        <addaction name="acExitCapiCity"/>
+      </widget>
+      <addaction name="menuGame"/>
+      <addaction name="menuTurn"/>
+      <addaction name="menuSettings"/>
+      <addaction name="menuAbout"/>
+    </widget>
+    <widget class="QDockWidget" name="dockPlayers">
+      <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="html">
-        <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="openExternalLinks">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QLineEdit" name="tfMess">
-         <property name="font">
-          <font>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="inputMask">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string notr="true"/>
-         </property>
-         <property name="frame">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="bEmos">
-         <property name="text">
-          <string>...</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/smilies/icon_smile.gif</normaloff>:/images/smilies/icon_smile.gif</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="bSend">
-         <property name="font">
-          <font>
-           <weight>50</weight>
-           <bold>false</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="text">
-          <string>Send</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="dockTurn">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="windowIcon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::AllDockWidgetAreas</set>
-   </property>
-   <property name="windowTitle">
-    <string>Turn</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_5">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bRoll">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Roll</string>
-         </property>
-         <property name="text">
-          <string notr="true">Roll</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/roll.png</normaloff>:/images/tools/roll.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bBuy">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Buy</string>
-         </property>
-         <property name="text">
-          <string notr="true">Buy</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/field/document.png</normaloff>:/images/field/document.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bAuction">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Auction</string>
-         </property>
-         <property name="text">
-          <string notr="true">Auction</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/auction.png</normaloff>:/images/tools/auction.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bEndturn">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>End turn</string>
-         </property>
-         <property name="text">
-          <string notr="true">End Turn</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/endturn.png</normaloff>:/images/tools/endturn.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
-       <item>
-        <spacer name="jailSpLeft">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bJailRoll">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Roll</string>
-         </property>
-         <property name="text">
-          <string notr="true">Roll</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/jailroll.png</normaloff>:/images/tools/jailroll.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bCard">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Use card</string>
-         </property>
-         <property name="text">
-          <string notr="true">Card</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/jailcard.png</normaloff>:/images/tools/jailcard.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="CmdToolButton" name="bPay">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="toolTip">
-          <string>Pay</string>
-         </property>
-         <property name="text">
-          <string notr="true">Pay</string>
-         </property>
-         <property name="icon">
-          <iconset resource="../../../ressources.qrc">
-           <normaloff>:/images/tools/jailpay.png</normaloff>:/images/tools/jailpay.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="jailSpRight">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-  </widget>
-  <widget class="QDockWidget" name="dockEvents">
-   <property name="sizePolicy">
-    <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
-     <horstretch>0</horstretch>
-     <verstretch>0</verstretch>
-    </sizepolicy>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>524287</width>
-     <height>524287</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="windowIcon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
-   </property>
-   <property name="allowedAreas">
-    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
-   </property>
-   <property name="windowTitle">
-    <string>Messages</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="QWidget" name="dockWidgetContents_4">
-    <layout class="QHBoxLayout" name="horizontalLayout_10">
-     <item>
-      <widget class="QTextBrowser" name="events">
-       <property name="maximumSize">
+      </property>
+      <property name="baseSize">
         <size>
-         <width>16777215</width>
-         <height>16777215</height>
+          <width>270</width>
+          <height>250</height>
         </size>
-       </property>
-       <property name="html">
-        <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-       <property name="openExternalLinks">
-        <bool>true</bool>
-       </property>
+      </property>
+      <property name="windowIcon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
+      </property>
+      <property name="features">
+        <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+      </property>
+      <property name="allowedAreas">
+        <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+      </property>
+      <property name="windowTitle">
+        <string>Players</string>
+      </property>
+      <attribute name="dockWidgetArea">
+        <number>1</number>
+      </attribute>
+      <widget class="QWidget" name="dockPlayersWidget">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+            <widget class="QScrollArea" name="scrollArea">
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                </sizepolicy>
+              </property>
+              <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+              </property>
+              <property name="horizontalScrollBarPolicy">
+                <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="widgetResizable">
+                <bool>true</bool>
+              </property>
+              <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+              </property>
+              <widget class="QWidget" name="scrollAreaWidgetContents">
+                <property name="geometry">
+                  <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>250</width>
+                    <height>216</height>
+                  </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_4">
+                  <item>
+                    <layout class="QVBoxLayout" name="playerInfos">
+                      <item>
+                        <widget class="QWidget" name="anchor" native="true"/>
+                      </item>
+                      <item>
+                        <spacer name="verticalSpacer">
+                          <property name="orientation">
+                            <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                            <size>
+                              <width>20</width>
+                              <height>40</height>
+                            </size>
+                          </property>
+                        </spacer>
+                      </item>
+                    </layout>
+                  </item>
+                </layout>
+              </widget>
+            </widget>
+          </item>
+        </layout>
       </widget>
-     </item>
-    </layout>
-   </widget>
+    </widget>
+    <widget class="QDockWidget" name="dockChat">
+      <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+        </sizepolicy>
+      </property>
+      <property name="font">
+        <font>
+          <weight>50</weight>
+          <bold>false</bold>
+          <kerning>false</kerning>
+        </font>
+      </property>
+      <property name="windowIcon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
+      </property>
+      <property name="features">
+        <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+      </property>
+      <property name="allowedAreas">
+        <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+      </property>
+      <property name="windowTitle">
+        <string>Chat</string>
+      </property>
+      <attribute name="dockWidgetArea">
+        <number>2</number>
+      </attribute>
+      <widget class="QWidget" name="dockWidgetContents_3">
+        <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+            <widget class="QTextBrowser" name="chat">
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                </sizepolicy>
+              </property>
+              <property name="font">
+                <font>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                </font>
+              </property>
+              <property name="html">
+                <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+                &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+                p, li { white-space: pre-wrap; }
+                &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+                &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="openExternalLinks">
+                <bool>true</bool>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+                <widget class="QLineEdit" name="tfMess">
+                  <property name="font">
+                    <font>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                    </font>
+                  </property>
+                  <property name="inputMask">
+                    <string notr="true"/>
+                  </property>
+                  <property name="text">
+                    <string notr="true"/>
+                  </property>
+                  <property name="frame">
+                    <bool>true</bool>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QToolButton" name="bEmos">
+                  <property name="text">
+                    <string>...</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/smilies/icon_smile.gif</normaloff>:/images/smilies/icon_smile.gif</iconset>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="bSend">
+                  <property name="font">
+                    <font>
+                      <weight>50</weight>
+                      <bold>false</bold>
+                      <kerning>false</kerning>
+                    </font>
+                  </property>
+                  <property name="text">
+                    <string>Send</string>
+                  </property>
+                </widget>
+              </item>
+            </layout>
+          </item>
+        </layout>
+      </widget>
+    </widget>
+    <widget class="QDockWidget" name="dockTurn">
+      <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+        </sizepolicy>
+      </property>
+      <property name="windowIcon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
+      </property>
+      <property name="features">
+        <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+      </property>
+      <property name="allowedAreas">
+        <set>Qt::AllDockWidgetAreas</set>
+      </property>
+      <property name="windowTitle">
+        <string>Turn</string>
+      </property>
+      <attribute name="dockWidgetArea">
+        <number>1</number>
+      </attribute>
+      <widget class="QWidget" name="dockWidgetContents_5">
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+                <spacer name="horizontalSpacer_2">
+                  <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                    <size>
+                      <width>40</width>
+                      <height>20</height>
+                    </size>
+                  </property>
+                </spacer>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bRoll">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Roll</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Roll</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/roll.png</normaloff>:/images/tools/roll.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bBuy">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Buy</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Buy</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/field/document.png</normaloff>:/images/field/document.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bAuction">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Auction</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Auction</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/auction.png</normaloff>:/images/tools/auction.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bEndturn">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>End turn</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">End Turn</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/endturn.png</normaloff>:/images/tools/endturn.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                    <size>
+                      <width>40</width>
+                      <height>20</height>
+                    </size>
+                  </property>
+                </spacer>
+              </item>
+            </layout>
+          </item>
+          <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+                <spacer name="jailSpLeft">
+                  <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                    <size>
+                      <width>40</width>
+                      <height>20</height>
+                    </size>
+                  </property>
+                </spacer>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bJailRoll">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Roll</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Roll</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/jailroll.png</normaloff>:/images/tools/jailroll.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bCard">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Use card</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Card</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/jailcard.png</normaloff>:/images/tools/jailcard.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="CmdToolButton" name="bPay">
+                  <property name="enabled">
+                    <bool>false</bool>
+                  </property>
+                  <property name="toolTip">
+                    <string>Pay</string>
+                  </property>
+                  <property name="text">
+                    <string notr="true">Pay</string>
+                  </property>
+                  <property name="icon">
+                    <iconset resource="../../../ressources.qrc">
+                    <normaloff>:/images/tools/jailpay.png</normaloff>:/images/tools/jailpay.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                    <size>
+                      <width>24</width>
+                      <height>24</height>
+                    </size>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <spacer name="jailSpRight">
+                  <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                    <size>
+                      <width>40</width>
+                      <height>20</height>
+                    </size>
+                  </property>
+                </spacer>
+              </item>
+            </layout>
+          </item>
+        </layout>
+      </widget>
+    </widget>
+    <widget class="QDockWidget" name="dockEvents">
+      <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+        </sizepolicy>
+      </property>
+      <property name="maximumSize">
+        <size>
+          <width>524287</width>
+          <height>524287</height>
+        </size>
+      </property>
+      <property name="baseSize">
+        <size>
+          <width>0</width>
+          <height>0</height>
+        </size>
+      </property>
+      <property name="windowIcon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/icons/64x64.png</normaloff>:/icons/64x64.png</iconset>
+      </property>
+      <property name="features">
+        <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+      </property>
+      <property name="allowedAreas">
+        <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+      </property>
+      <property name="windowTitle">
+        <string>Messages</string>
+      </property>
+      <attribute name="dockWidgetArea">
+        <number>1</number>
+      </attribute>
+      <widget class="QWidget" name="dockWidgetContents_4">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+            <widget class="QTextBrowser" name="events">
+              <property name="maximumSize">
+                <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                </size>
+              </property>
+              <property name="html">
+                <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+                &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+                p, li { white-space: pre-wrap; }
+                &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+                &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="openExternalLinks">
+                <bool>true</bool>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </widget>
+    </widget>
+    <action name="acLeaveGame">
+      <property name="text">
+        <string>Leave current game</string>
+      </property>
+    </action>
+    <action name="acExitCapiCity">
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/reject.png</normaloff>:/images/tools/reject.png</iconset>
+      </property>
+      <property name="text">
+        <string>Exit Capi City</string>
+      </property>
+    </action>
+    <action name="acConfig">
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/menu/config.png</normaloff>:/images/menu/config.png</iconset>
+      </property>
+      <property name="text">
+        <string>Configure Capi City</string>
+      </property>
+    </action>
+    <action name="acDisconnect">
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/removetrade.png</normaloff>:/images/tools/removetrade.png</iconset>
+      </property>
+      <property name="text">
+        <string>Leave server</string>
+      </property>
+    </action>
+    <action name="acViewPlayers">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="checked">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Players</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+Alt+P</string>
+      </property>
+    </action>
+    <action name="acViewTurn">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="checked">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Turn</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+Alt+T</string>
+      </property>
+    </action>
+    <action name="acViewMessages">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="checked">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Messages</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+Alt+M</string>
+      </property>
+    </action>
+    <action name="acViewChat">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="checked">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Chat</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+Alt+C</string>
+      </property>
+    </action>
+    <action name="acLockLayout">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Lock layout</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+L</string>
+      </property>
+    </action>
+    <action name="acAbout">
+      <property name="text">
+        <string>About</string>
+      </property>
+    </action>
+    <action name="acShowMenuBar">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="checked">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Show Menubar</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+M</string>
+      </property>
+      <property name="shortcutContext">
+        <enum>Qt::WindowShortcut</enum>
+      </property>
+      <property name="visible">
+        <bool>true</bool>
+      </property>
+    </action>
+    <action name="acRoll">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/roll.png</normaloff>:/images/tools/roll.png</iconset>
+      </property>
+      <property name="text">
+        <string>Roll</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+R</string>
+      </property>
+    </action>
+    <action name="acAutoRoll">
+      <property name="checkable">
+        <bool>true</bool>
+      </property>
+      <property name="enabled">
+        <bool>true</bool>
+      </property>
+      <property name="text">
+        <string>Roll automatically</string>
+      </property>
+    </action>
+    <action name="acBuy">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/field/document.png</normaloff>:/images/field/document.png</iconset>
+      </property>
+      <property name="text">
+        <string>Buy</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+B</string>
+      </property>
+    </action>
+    <action name="acAuction">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/auction.png</normaloff>:/images/tools/auction.png</iconset>
+      </property>
+      <property name="text">
+        <string>Auction</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+A</string>
+      </property>
+    </action>
+    <action name="acEndTurn">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/endturn.png</normaloff>:/images/tools/endturn.png</iconset>
+      </property>
+      <property name="text">
+        <string>End turn</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+E</string>
+      </property>
+    </action>
+    <action name="acJailRoll">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/jailroll.png</normaloff>:/images/tools/jailroll.png</iconset>
+      </property>
+      <property name="text">
+        <string>Roll</string>
+      </property>
+      <property name="shortcut">
+        <string>Alt+R</string>
+      </property>
+    </action>
+    <action name="acJailCard">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/jailcard.png</normaloff>:/images/tools/jailcard.png</iconset>
+      </property>
+      <property name="text">
+        <string>Use card</string>
+      </property>
+      <property name="shortcut">
+        <string>Alt+C</string>
+      </property>
+    </action>
+    <action name="acJailPay">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="icon">
+        <iconset resource="../../../ressources.qrc">
+        <normaloff>:/images/tools/jailpay.png</normaloff>:/images/tools/jailpay.png</iconset>
+      </property>
+      <property name="text">
+        <string>Pay</string>
+      </property>
+      <property name="shortcut">
+        <string>Alt+P</string>
+      </property>
+    </action>
+    <action name="acSearch">
+      <property name="enabled">
+        <bool>false</bool>
+      </property>
+      <property name="text">
+        <string>Search estate</string>
+      </property>
+      <property name="shortcut">
+        <string>Ctrl+F</string>
+      </property>
+    </action>
   </widget>
-  <action name="acLeaveGame">
-   <property name="text">
-    <string>Leave current game</string>
-   </property>
-  </action>
-  <action name="acExitCapiCity">
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/reject.png</normaloff>:/images/tools/reject.png</iconset>
-   </property>
-   <property name="text">
-    <string>Exit Capi City</string>
-   </property>
-  </action>
-  <action name="acConfig">
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/menu/config.png</normaloff>:/images/menu/config.png</iconset>
-   </property>
-   <property name="text">
-    <string>Configure Capi City</string>
-   </property>
-  </action>
-  <action name="acDisconnect">
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/removetrade.png</normaloff>:/images/tools/removetrade.png</iconset>
-   </property>
-   <property name="text">
-    <string>Leave server</string>
-   </property>
-  </action>
-  <action name="acViewPlayers">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Players</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Alt+P</string>
-   </property>
-  </action>
-  <action name="acViewTurn">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Turn</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Alt+T</string>
-   </property>
-  </action>
-  <action name="acViewMessages">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Messages</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Alt+M</string>
-   </property>
-  </action>
-  <action name="acViewChat">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Chat</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+Alt+C</string>
-   </property>
-  </action>
-  <action name="acLockLayout">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Lock layout</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+L</string>
-   </property>
-  </action>
-  <action name="acAbout">
-   <property name="text">
-    <string>About</string>
-   </property>
-  </action>
-  <action name="acShowMenuBar">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Show Menubar</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+M</string>
-   </property>
-   <property name="shortcutContext">
-    <enum>Qt::WindowShortcut</enum>
-   </property>
-   <property name="visible">
-    <bool>true</bool>
-   </property>
-  </action>
-  <action name="acRoll">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/roll.png</normaloff>:/images/tools/roll.png</iconset>
-   </property>
-   <property name="text">
-    <string>Roll</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+R</string>
-   </property>
-  </action>
-  <action name="acAutoRoll">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
-   <property name="enabled">
-    <bool>true</bool>
-   </property>
-   <property name="text">
-    <string>Roll automatically</string>
-   </property>
-  </action>
-  <action name="acBuy">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/field/document.png</normaloff>:/images/field/document.png</iconset>
-   </property>
-   <property name="text">
-    <string>Buy</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+B</string>
-   </property>
-  </action>
-  <action name="acAuction">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/auction.png</normaloff>:/images/tools/auction.png</iconset>
-   </property>
-   <property name="text">
-    <string>Auction</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+A</string>
-   </property>
-  </action>
-  <action name="acEndTurn">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/endturn.png</normaloff>:/images/tools/endturn.png</iconset>
-   </property>
-   <property name="text">
-    <string>End turn</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+E</string>
-   </property>
-  </action>
-  <action name="acJailRoll">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/jailroll.png</normaloff>:/images/tools/jailroll.png</iconset>
-   </property>
-   <property name="text">
-    <string>Roll</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+R</string>
-   </property>
-  </action>
-  <action name="acJailCard">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/jailcard.png</normaloff>:/images/tools/jailcard.png</iconset>
-   </property>
-   <property name="text">
-    <string>Use card</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+C</string>
-   </property>
-  </action>
-  <action name="acJailPay">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="../../../ressources.qrc">
-     <normaloff>:/images/tools/jailpay.png</normaloff>:/images/tools/jailpay.png</iconset>
-   </property>
-   <property name="text">
-    <string>Pay</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+P</string>
-   </property>
-  </action>
-  <action name="acSearch">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="text">
-    <string>Search estate</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+F</string>
-   </property>
-  </action>
- </widget>
- <customwidgets>
-  <customwidget>
-   <class>CmdToolButton</class>
-   <extends>QToolButton</extends>
-   <header>src/Capic/Gui/cmdtoolbutton.h</header>
-  </customwidget>
- </customwidgets>
- <resources>
-  <include location="../../../ressources.qrc"/>
- </resources>
- <connections/>
+  <customwidgets>
+    <customwidget>
+      <class>CmdToolButton</class>
+      <extends>QToolButton</extends>
+      <header>src/Capic/Gui/cmdtoolbutton.h</header>
+    </customwidget>
+  </customwidgets>
+  <resources>
+    <include location="../../../ressources.qrc"/>
+  </resources>
+  <connections/>
 </ui>

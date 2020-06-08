@@ -24,21 +24,21 @@
 class CapiEstate;
 
 class CapiGroup : public CapiObject {
-	public:
-		CapiGroup(int id, QString n);
+public:
+        CapiGroup(int id, QString n);
 
-		int getNumEstates();
-		CapiEstate* getEstate(int i);
+        int getNumEstates();
+        CapiEstate* getEstate(int i);
 
-		void addEstate(CapiEstate* f);
+        void addEstate(CapiEstate* f);
 
-		bool getAllEstatesSameOwner(); //Checks, if all estates of the group have the same , not -1 owner
-		int getNumHouses(); //Checks, if there is a house on any of the Estate of the groups
-		bool canBuyHouseRow();
-		bool canSellHouseRow();
+        bool getAllEstatesSameOwner(); //Checks, if all estates of the group have the same , not -1 owner
+        int getNumHouses(); //Checks, if there is a house on any of the Estate of the groups
+        bool canBuyHouseRow();
+        bool canSellHouseRow();
 
-	protected:
-		QList<CapiEstate*> estates;
+protected:
+        QList<CapiEstate*> estates;
 
 };
 

@@ -25,54 +25,54 @@ class CapiGame;
 
 class CapiPlayer : public CapiObject {
 
-	public:
-		CapiPlayer(int i);
-		~CapiPlayer();
-		CapiGame* getGame();
-		QString   getAvatar();
-		int       getMoney();
-		int       getPos();
-		bool      getInJail();
-		bool      getHasTurn();
-		bool      getCanRoll();
-		bool      getCanBuyEstate();
-		bool      getSpectator();
-		bool      getHasDept();
-		bool      getCanAuction();
-		bool      getCanUseCard();
-		bool      getBankrupt();
-		bool      getDirectmove();
+public:
+        CapiPlayer(int i);
+        ~CapiPlayer();
+        CapiGame* getGame();
+        QString   getAvatar();
+        int       getMoney();
+        int       getPos();
+        bool      getInJail();
+        bool      getHasTurn();
+        bool      getCanRoll();
+        bool      getCanBuyEstate();
+        bool      getSpectator();
+        bool      getHasDept();
+        bool      getCanAuction();
+        bool      getCanUseCard();
+        bool      getBankrupt();
+        bool      getDirectmove();
 
-		void setGame(CapiGame* g);
-		void setAvatar(QString a);
-		void setMoney(int m);
-		void setPos(int p);
-		void setInJail(bool j);
-		void setHasTurn(bool ht);
-		void setCanRoll(bool cr);
-		void setCanBuyEstate(bool cbe);
-		void setSpectator(bool s);
-		void setHasDept(bool hd);
-		void setCanAuction(bool ca);
-		void setCanUseCard(bool cuc);
-		void setBankrupt(bool b);
-		void setDirectmove(bool dm);
+        void setGame(CapiGame* g);
+        void setAvatar(QString a);
+        void setMoney(int m);
+        void setPos(int p);
+        void setInJail(bool j);
+        void setHasTurn(bool ht);
+        void setCanRoll(bool cr);
+        void setCanBuyEstate(bool cbe);
+        void setSpectator(bool s);
+        void setHasDept(bool hd);
+        void setCanAuction(bool ca);
+        void setCanUseCard(bool cuc);
+        void setBankrupt(bool b);
+        void setDirectmove(bool dm);
 
-	protected:
-		CapiGame* game;
-		QString avatar;
-		int money;
-		int pos;
-		bool inJail;
-		bool hasTurn;
-		bool canRoll;
-		bool canBuyEstate;
-		bool spectator;
-		bool hasDept;
-		bool canAuction;
-		bool canUseCard;
-		bool bankrupt;
-		bool directmove;
+protected:
+        CapiGame* game;
+        QString avatar;
+        int money;
+        int pos;
+        bool inJail;
+        bool hasTurn;
+        bool canRoll;
+        bool canBuyEstate;
+        bool spectator;
+        bool hasDept;
+        bool canAuction;
+        bool canUseCard;
+        bool bankrupt;
+        bool directmove;
 };
 
 #endif // CAPIPLAYER_H

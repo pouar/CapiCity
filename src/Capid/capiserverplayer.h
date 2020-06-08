@@ -21,63 +21,63 @@
 #include <QTcpSocket>
 
 class CapiServerPlayer : public QObject,  public CapiPlayer {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		CapiServerPlayer(int id);
-		~CapiServerPlayer();
+public:
+        CapiServerPlayer(int id);
+        ~CapiServerPlayer();
 
-		QString getCookie();
+        QString getCookie();
 
-		void setCookie(QString c);
+        void setCookie(QString c);
 
-		void send(QString msg);
-		void sendMsg(QString msg, QString type="chat", int pid=-1);
-		void sendClientInfo();
-		void setState(int s);
-		void setSocket(QTcpSocket* sock);
-		QTcpSocket* getSocket();
-		int getState();
-		bool getMoved();
-		void setMoved(bool m);
+        void send(QString msg);
+        void sendMsg(QString msg, QString type="chat", int pid=-1);
+        void sendClientInfo();
+        void setState(int s);
+        void setSocket(QTcpSocket* sock);
+        QTcpSocket* getSocket();
+        int getState();
+        bool getMoved();
+        void setMoved(bool m);
 
-		void setPosMoveTo(int pos);
+        void setPosMoveTo(int pos);
 
-		void resetDoubles();
-		void incDoubles();
-		int getDoubles();
-		void resetJailRolls();
-		void incJailRolls();
-		int getJailRolls();
-		void tick();
+        void resetDoubles();
+        void incDoubles();
+        int getDoubles();
+        void resetJailRolls();
+        void incJailRolls();
+        int getJailRolls();
+        void tick();
 
-		QString getLang();
-		void setLang(QString lang);
-		QString getUpdate(QString type="");
+        QString getLang();
+        void setLang(QString lang);
+        QString getUpdate(QString type="");
 
-	protected:
-		QTcpSocket* sock;
-		int state;
-		//state == 0 handshaking: server sendet the first handshake and waits for .nName from client
-		//state == 1 connected ready for Player commands
-		//state == 2 connection lost. Client has 180 secs to reconnect
-		//state == 3 dead. This object should be deleted
-		bool moved;
-		int posMoveTo; //The position that the client has animate to. Used if client loses connection
+protected:
+        QTcpSocket* sock;
+        int state;
+        //state == 0 handshaking: server sendet the first handshake and waits for .nName from client
+        //state == 1 connected ready for Player commands
+        //state == 2 connection lost. Client has 180 secs to reconnect
+        //state == 3 dead. This object should be deleted
+        bool moved;
+        int posMoveTo; //The position that the client has animate to. Used if client loses connection
 
-		int doubles;
-		int jailRolls;
-		int secondsDisconnected;
-		QString lang;
+        int doubles;
+        int jailRolls;
+        int secondsDisconnected;
+        QString lang;
 
-		QString cookie;
+        QString cookie;
 
-	private slots:
-		void recieveMessage();
-		void connectionLost();
-		
-	signals:
-		void gotMessage(int pid, QString msg);
+private slots:
+        void recieveMessage();
+        void connectionLost();
+                
+signals:
+        void gotMessage(int pid, QString msg);
 
 };
 

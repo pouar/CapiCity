@@ -23,37 +23,37 @@
 
 class CapiTrade {
 
-	public:
-		CapiTrade(int id, CapiPlayer* ac, CapiPlayer* sp);
+public:
+        CapiTrade(int id, CapiPlayer* ac, CapiPlayer* sp);
 
-		void updateEstateTrade(CapiPlayer* toPlayer, CapiEstate* tradeEstate);
-		void updateCardTrade(CapiPlayer* toPlayer, CapiCard* tradeCard);
-		void updateMoneyTrade(CapiPlayer* fromPlayer, CapiPlayer* toPlayer, int tradeMoney);
+        void updateEstateTrade(CapiPlayer* toPlayer, CapiEstate* tradeEstate);
+        void updateCardTrade(CapiPlayer* toPlayer, CapiCard* tradeCard);
+        void updateMoneyTrade(CapiPlayer* fromPlayer, CapiPlayer* toPlayer, int tradeMoney);
 
-		void accept(CapiPlayer* p, int revision);
-		bool playerInvolved(CapiPlayer* p);
-		void reject();
-		bool checkForAccepts();
-		QString run();
-		int getId();
+        void accept(CapiPlayer* p, int revision);
+        bool playerInvolved(CapiPlayer* p);
+        void reject();
+        bool checkForAccepts();
+        QString run();
+        int getId();
 
-	private:
-		int tradeid;
-		int revision;
-		QString type;
-		CapiPlayer* actor;
+private:
+        int tradeid;
+        int revision;
+        QString type;
+        CapiPlayer* actor;
 
-		QList<CapiTradeItem*> estateTrades;
-		QList<CapiTradeItem*> cardTrades;
-		QList<CapiTradeItem*> moneyTrades;
+        QList<CapiTradeItem*> estateTrades;
+        QList<CapiTradeItem*> cardTrades;
+        QList<CapiTradeItem*> moneyTrades;
 
-		QMap<CapiPlayer*, QString> accepts;
-		QString getUpdateString();
+        QMap<CapiPlayer*, QString> accepts;
+        QString getUpdateString();
 
-		void resetAccepts();
-		void cleanupTrades();
-		void sendUpdateToAll();
-		bool isEmpty();
+        void resetAccepts();
+        void cleanupTrades();
+        void sendUpdateToAll();
+        bool isEmpty();
 };
 
 #endif // CAPITRADE_H

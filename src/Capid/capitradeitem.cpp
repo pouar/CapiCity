@@ -17,78 +17,78 @@
 #include "capitradeitem.h"
 
 CapiTradeItem::CapiTradeItem(CapiPlayer* fp, CapiPlayer* tp) {
-	fromPlayer = fp;
-	toPlayer = tp;
+        fromPlayer = fp;
+        toPlayer = tp;
 }
 
 CapiPlayer* CapiTradeItem::getFromPlayer() {
-	return fromPlayer;
+        return fromPlayer;
 }
 
 CapiPlayer* CapiTradeItem::getToPlayer() {
-	return toPlayer;
+        return toPlayer;
 }
 
 CapiEstate* CapiTradeItem::getTradeEstate() {
-	return tradeEstate;
+        return tradeEstate;
 }
 
 CapiCard* CapiTradeItem::getTradeCard() {
-	return tradeCard;
+        return tradeCard;
 }
 
 int CapiTradeItem::getTradeMoney() {
-	return tradeMoney;
+        return tradeMoney;
 }
 
 void CapiTradeItem::setFromPlayer(CapiPlayer* fp) {
-	fromPlayer = fp;
+        fromPlayer = fp;
 }
 
 void CapiTradeItem::setToPlayer(CapiPlayer* tp) {
-	toPlayer = tp;
+        toPlayer = tp;
 }
 
 void CapiTradeItem::setTradeEstate(CapiEstate* te) {
-	tradeEstate = te;
-	tradeCard = 0;
-	tradeMoney = 0;
+        tradeEstate = te;
+        tradeCard = 0;
+        tradeMoney = 0;
 }
 
 void CapiTradeItem::setTradeCard(CapiCard* tc) {
-	tradeEstate = 0;
-	tradeCard = tc;
-	tradeMoney = 0;
+        tradeEstate = 0;
+        tradeCard = tc;
+        tradeMoney = 0;
 }
 
 void CapiTradeItem::setTradeMoney(int tm) {
-	tradeEstate = 0;
-	tradeCard = 0;
-	tradeMoney = tm;
+        tradeEstate = 0;
+        tradeCard = 0;
+        tradeMoney = tm;
 }
 
 bool CapiTradeItem::isEstateTrade() {
-	return tradeEstate != 0;
+        return tradeEstate != 0;
 }
 
 bool CapiTradeItem::isCardTrade() {
-	return tradeCard != 0;
+        return tradeCard != 0;
 }
 
 bool CapiTradeItem::isMoneyTrade() {
-	return tradeMoney != 0;
+        return tradeMoney != 0;
 }
 
 bool CapiTradeItem::isValid() {
-	if (isEstateTrade())
-		return ((tradeEstate->getOwner() == fromPlayer) && (tradeEstate->getHouses() == 0));
+        if (isEstateTrade())
+                return ((tradeEstate->getOwner() == fromPlayer) && (tradeEstate->getHouses() == 0));
 
-	if (isCardTrade())
-		return (tradeCard->getOwner() == fromPlayer);
+        if (isCardTrade())
+                return (tradeCard->getOwner() == fromPlayer);
 
-	if (isMoneyTrade())
-		return (fromPlayer->getMoney() >= tradeMoney);
+        if (isMoneyTrade())
+                return (fromPlayer->getMoney() >= tradeMoney);
 
-	//qDebug() << "bug: This tradeitem is empty!";
-	return false;
+        //qDebug() << "bug: This tradeitem is empty!";
+        return false;
 }

@@ -20,25 +20,25 @@
 #include <QtWidgets/QWidget>
 
 namespace Ui {
-	class PlayerAuction;
+        class PlayerAuction;
 }
 
 class PlayerAuction : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		PlayerAuction(QWidget *parent = 0, int avMinHeight= 0);
-		~PlayerAuction();
-		void setAvatar(QImage a);
-		void setName(QString n);
-		void setMoney(QString m);
-		int playerId;
+public:
+        PlayerAuction(QWidget *parent = 0, int avMinHeight= 0);
+        ~PlayerAuction();
+        void setAvatar(QImage a);
+        void setName(QString n);
+        void setMoney(QString m);
+        int playerId;
 
-	protected:
-		void changeEvent(QEvent* e);
+protected:
+        void changeEvent(QEvent* e);
 
-	private:
-		Ui::PlayerAuction *m_ui;
+private:
+        Ui::PlayerAuction *m_ui;
 };
 
 #endif // PLAYERINFO_H

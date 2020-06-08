@@ -21,35 +21,35 @@
 #include "playerauction.h"
 
 namespace Ui {
-	class Auction;
+        class Auction;
 }
 
 class Auction : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		Auction(QWidget *parent = 0);
-		~Auction();
-		void addPlayerWidget(PlayerAuction* pi);
-		void setId(int aid);
-		void setEstateName(QString name);
-		void setMinBid(int minBid);
-		void setStatusText(QString text);
-		void resetSpinBox();
+public:
+        Auction(QWidget *parent = 0);
+        ~Auction();
+        void addPlayerWidget(PlayerAuction* pi);
+        void setId(int aid);
+        void setEstateName(QString name);
+        void setMinBid(int minBid);
+        void setStatusText(QString text);
+        void resetSpinBox();
 
-	private:
-		Ui::Auction *m_ui;
-		int id;
+private:
+        Ui::Auction *m_ui;
+        int id;
 
-	private slots:
-		void emitBid();
-		void emitBidOnReturnPress();
+private slots:
+        void emitBid();
+        void emitBidOnReturnPress();
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	signals:
-		void bid(QString bid);
+signals:
+        void bid(QString bid);
 };
 
 #endif // AUCTION_H

@@ -21,32 +21,32 @@
 #include <QSettings>
 
 namespace Ui {
-	class Config;
+        class Config;
 }
 
 class Config : public QDialog {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		Config(QWidget *parent = 0);
-		~Config();
+public:
+        Config(QWidget *parent = 0);
+        ~Config();
 
-	private slots:
-		void save();
-		void openFile();
+private slots:
+        void save();
+        void openFile();
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	private:
-		Ui::Config *m_ui;
-		QSettings s;
+private:
+        Ui::Config *m_ui;
+        QSettings s;
 
-		void loadImageFromData(QString data);
+        void loadImageFromData(QString data);
 
-	signals:
-		void saved(QString type, QString data);
-		void saved(QString type, bool data);
+signals:
+        void saved(QString type, QString data);
+        void saved(QString type, bool data);
 
 };
 #endif // CONFIG_H

@@ -17,22 +17,22 @@
 #include "capiobject.h"
 
 CapiObject::CapiObject(int id) {
-	this->id = id;
-	name = "Noname";
+        this->id = id;
+        name = "Noname";
 }
 
 int CapiObject::getId() {
-	return id;
+        return id;
 }
 
 QString CapiObject::getName() {
-	return name;
+        return name;
 }
 
 void CapiObject::setId(int i) {
-	id = i;
+        id = i;
 }
 
 void CapiObject::setName(QString n) {
-	name = n;
+        name = n;
 }

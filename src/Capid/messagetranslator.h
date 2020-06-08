@@ -23,17 +23,17 @@
 //A Static Class to generate Display messages to the client
 class MessageTranslator {
 
-	public:
-		MessageTranslator();
-		~MessageTranslator();
+public:
+        MessageTranslator();
+        ~MessageTranslator();
 
-		void loadLang(QString lang);
-		QString translateMessage(QString text, QString lang, QMap<QString, QString>* args);
-		QString translate(QString text, QString lang);
-		QString replaceVars(QString text, QMap<QString, QString>* args);
+        void loadLang(QString lang);
+        QString translateMessage(QString text, QString lang, QMap<QString, QString>* args);
+        QString translate(QString text, QString lang);
+        QString replaceVars(QString text, QMap<QString, QString>* args);
 
-	private:
-		QMap<QString, QMap<QString,QString>*> translators;
+private:
+        QMap<QString, QMap<QString,QString>*> translators;
 };
 
 #endif // MESSAGETranslator_H

@@ -18,10 +18,10 @@
 #include "gameoption.h"
 
 GameOption::GameOption(QString cmd, QString txt, QWidget* parent) : QWidget(parent) {
-	command = cmd;
-	text = txt;
+        command = cmd;
+        text = txt;
 }
 
 QString GameOption::getCommand() {
-	return command;
+        return command;
 }

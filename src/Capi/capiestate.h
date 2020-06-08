@@ -28,72 +28,72 @@ class CapiGroup;
 
 class CapiEstate : public CapiObject {
 
-	public:
-		CapiEstate(int i);
-		~CapiEstate();
+public:
+        CapiEstate(int i);
+        ~CapiEstate();
 
-		QString     getPicture();
-		int         getMoney();
-		bool        getBuyable();
-		int         getPrice();
-		CapiPlayer* getOwner();
-		int         getMortageVal();
-		int         getUnmortageVal();
-		bool        getMortaged();
-		bool        getCanToggleMortage();
-		int         getRent(int i);
-		CapiGroup*  getGroup();
-		QString     getColor();
-		QString     getBgColor();
-		int         getHousePrice();
-		int         getSellHousePrice();
-		int         getHouses();
-		bool        getCanBuyHouse();
-		bool        getCanSellHouse();
+        QString     getPicture();
+        int         getMoney();
+        bool        getBuyable();
+        int         getPrice();
+        CapiPlayer* getOwner();
+        int         getMortageVal();
+        int         getUnmortageVal();
+        bool        getMortaged();
+        bool        getCanToggleMortage();
+        int         getRent(int i);
+        CapiGroup*  getGroup();
+        QString     getColor();
+        QString     getBgColor();
+        int         getHousePrice();
+        int         getSellHousePrice();
+        int         getHouses();
+        bool        getCanBuyHouse();
+        bool        getCanSellHouse();
 
-		void setPicture(QString p);
-		void setMoney(int m);
-		void setBuyable(bool b);
-		void setPrice(int p);
-		void setOwner(CapiPlayer* p);
-		void setMortageVal(int mv);
-		void setUnmortageVal(int umv);
-		void setMortaged(bool m);
-		void setCanToggleMortage(bool ctm);
-		void setRent(int i, int r);
-		void setGroup(CapiGroup* g);
-		void setColor(QString col);
-		void setBgColor(QString col);
-		void setHousePrice(int hp);
-		void setSellHousePrice(int shp);
-		void setHouses(int h);
-		void setCanBuyHouse(bool cbh);
-		void setCanSellHouse(bool csh);
+        void setPicture(QString p);
+        void setMoney(int m);
+        void setBuyable(bool b);
+        void setPrice(int p);
+        void setOwner(CapiPlayer* p);
+        void setMortageVal(int mv);
+        void setUnmortageVal(int umv);
+        void setMortaged(bool m);
+        void setCanToggleMortage(bool ctm);
+        void setRent(int i, int r);
+        void setGroup(CapiGroup* g);
+        void setColor(QString col);
+        void setBgColor(QString col);
+        void setHousePrice(int hp);
+        void setSellHousePrice(int shp);
+        void setHouses(int h);
+        void setCanBuyHouse(bool cbh);
+        void setCanSellHouse(bool csh);
 
-	protected:
-		//All Fields
-		QString picture;
-		int money;
-		CapiGroup* group;
-		QString color;
-		QString bgColor;
+protected:
+        //All Fields
+        QString picture;
+        int money;
+        CapiGroup* group;
+        QString color;
+        QString bgColor;
 
-		//Buyable Fields
-		int buyable;
-		int price;
-		CapiPlayer* owner;
-		int mortageVal;
-		int unmortageVal;
-		bool mortaged;
-		bool canToggleMortage;
-		int rent[6];
+        //Buyable Fields
+        int buyable;
+        int price;
+        CapiPlayer* owner;
+        int mortageVal;
+        int unmortageVal;
+        bool mortaged;
+        bool canToggleMortage;
+        int rent[6];
 
-		//Streets
-		int housePrice;
-		int sellHousePrice;
-		int houses;
-		bool canBuyHouse;
-		bool canSellHouse;
+        //Streets
+        int housePrice;
+        int sellHousePrice;
+        int houses;
+        bool canBuyHouse;
+        bool canSellHouse;
 };
 
 #endif // CAPIESTATE_H

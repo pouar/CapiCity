@@ -20,28 +20,28 @@
 #include <QWidget>
 
 namespace Ui {
-	class Notifier;
+        class Notifier;
 }
 
 class Notifier : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		Notifier(QWidget *parent = 0);
-		~Notifier();
+public:
+        Notifier(QWidget *parent = 0);
+        ~Notifier();
 
-	protected:
-		void changeEvent(QEvent *e);
-		void paintEvent(QPaintEvent* e);
+protected:
+        void changeEvent(QEvent *e);
+        void paintEvent(QPaintEvent* e);
 
-	private:
-		Ui::Notifier *ui;
-		QTimer* timer;
-		QColor c;
+private:
+        Ui::Notifier *ui;
+        QTimer* timer;
+        QColor c;
 
-	public slots:
-		void showNotify(int secs);
-		void hideNotify();
+public slots:
+        void showNotify(int secs);
+        void hideNotify();
 
 };
 

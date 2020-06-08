@@ -20,26 +20,26 @@
 #include "gameoption.h"
 
 namespace Ui {
-	class GameBoolOption;
+        class GameBoolOption;
 }
 
 class GameBoolOption : public GameOption {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		GameBoolOption(QString cmd, QString txt, QWidget *parent = 0);
-		~GameBoolOption();
-		void setText(QString txt);
-		void setValue(QString val);
+public:
+        GameBoolOption(QString cmd, QString txt, QWidget *parent = 0);
+        ~GameBoolOption();
+        void setText(QString txt);
+        void setValue(QString val);
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	private:
-		Ui::GameBoolOption *m_ui;
+private:
+        Ui::GameBoolOption *m_ui;
 
-	private slots:
-		void emitOptionChanged(bool ch);
+private slots:
+        void emitOptionChanged(bool ch);
 };
 
 #endif // GAMEBOOLOPTION_H

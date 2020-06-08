@@ -25,40 +25,40 @@
 #include "src/Capic/capiclientgame.h"
 
 class CapiClientPlayer : public QObject, public CapiPlayer {
-	Q_OBJECT
-	Q_PROPERTY(int offset READ getOffset WRITE setOffset)
+        Q_OBJECT
+        Q_PROPERTY(int offset READ getOffset WRITE setOffset)
 
-	public:
-		CapiClientPlayer(int id);
-		~CapiClientPlayer();
-		QString getChatColor();
+public:
+        CapiClientPlayer(int id);
+        ~CapiClientPlayer();
+        QString getChatColor();
 
-		void setGame(CapiClientGame* g);
-		void setName(QString n);
-		void setAvatar(QString a);
-		void setMoney(int m);
-		void setInJail(bool j);
-		void setSpectator(bool spec);
-		void setHasTurn(bool ht);
-		void setPlayerWidgetVisible(bool vis);
-		void setOffset(int o);
-		int getOffset();
+        void setGame(CapiClientGame* g);
+        void setName(QString n);
+        void setAvatar(QString a);
+        void setMoney(int m);
+        void setInJail(bool j);
+        void setSpectator(bool spec);
+        void setHasTurn(bool ht);
+        void setPlayerWidgetVisible(bool vis);
+        void setOffset(int o);
+        int getOffset();
 
-		PlayerInfo* playerWidget;
-		PlayerAuction* auction;
+        PlayerInfo* playerWidget;
+        PlayerAuction* auction;
 
-		QImage avImage;
-		QImage shadow;
+        QImage avImage;
+        QImage shadow;
 
-	private:
-		QString chatColor;
-		int offset;
-		bool posAc;
-		void weakShadow();
-		void blurShadow();
+private:
+        QString chatColor;
+        int offset;
+        bool posAc;
+        void weakShadow();
+        void blurShadow();
 
-	signals:
-		void positionChanged(int newPos);
+signals:
+        void positionChanged(int newPos);
 };
 
 #endif // CAPICLIENTPLAYER_H

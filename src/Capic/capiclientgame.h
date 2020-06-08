@@ -22,19 +22,19 @@
 
 class CapiClientGame : public CapiGame {
 
-	public:
-		CapiClientGame(int id);
+public:
+        CapiClientGame(int id);
 
-		CapiClientEstate* getEstate(int id);
-		CapiGroup* getGroupFromList(int i);
-		int getGroupListNumber(int gid);
-		int  getNumGroups();
-		bool getListed();
+        CapiClientEstate* getEstate(int id);
+        CapiGroup* getGroupFromList(int i);
+        int getGroupListNumber(int gid);
+        int  getNumGroups();
+        bool getListed();
 
-		void setListed(bool l);
+        void setListed(bool l);
 
-	protected:
-		bool listed;
+protected:
+        bool listed;
 };
 
 #endif // CAPICLIENTGAME_H

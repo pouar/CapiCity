@@ -23,33 +23,33 @@
 
 class CapiTradeItem {
 
-	public:
-		CapiTradeItem(CapiPlayer* fp, CapiPlayer* tp);
+public:
+        CapiTradeItem(CapiPlayer* fp, CapiPlayer* tp);
 
-		CapiPlayer* getFromPlayer();
-		CapiPlayer* getToPlayer();
-		CapiEstate* getTradeEstate();
-		CapiCard*   getTradeCard();
-		int         getTradeMoney();
+        CapiPlayer* getFromPlayer();
+        CapiPlayer* getToPlayer();
+        CapiEstate* getTradeEstate();
+        CapiCard*   getTradeCard();
+        int         getTradeMoney();
 
-		void setFromPlayer(CapiPlayer* fp);
-		void setToPlayer(CapiPlayer* tp);
-		void setTradeEstate(CapiEstate* te);
-		void setTradeCard(CapiCard* tc);
-		void setTradeMoney(int tm);
+        void setFromPlayer(CapiPlayer* fp);
+        void setToPlayer(CapiPlayer* tp);
+        void setTradeEstate(CapiEstate* te);
+        void setTradeCard(CapiCard* tc);
+        void setTradeMoney(int tm);
 
-		bool isEstateTrade();
-		bool isCardTrade();
-		bool isMoneyTrade();
+        bool isEstateTrade();
+        bool isCardTrade();
+        bool isMoneyTrade();
 
-		bool isValid();
+        bool isValid();
 
-	private:
-		CapiPlayer* fromPlayer;
-		CapiPlayer* toPlayer;
-		CapiEstate* tradeEstate;
-		CapiCard* tradeCard;
-		int tradeMoney;
+private:
+        CapiPlayer* fromPlayer;
+        CapiPlayer* toPlayer;
+        CapiEstate* tradeEstate;
+        CapiCard* tradeCard;
+        int tradeMoney;
 };
 
 #endif // CAPITRADEITEM_H

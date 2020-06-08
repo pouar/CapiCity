@@ -18,43 +18,43 @@
 #include "ui_gamebooloption.h"
 
 GameBoolOption::GameBoolOption(QString cmd, QString txt, QWidget *parent) : GameOption(cmd, txt, parent), m_ui(new Ui::GameBoolOption) {
-	m_ui->setupUi(this);
+        m_ui->setupUi(this);
 
-	m_ui->cbOption->setText(txt);
+        m_ui->cbOption->setText(txt);
 
-	connect(m_ui->cbOption, SIGNAL(toggled(bool)), this, SLOT(emitOptionChanged(bool)));
+        connect(m_ui->cbOption, SIGNAL(toggled(bool)), this, SLOT(emitOptionChanged(bool)));
 }
 
 GameBoolOption::~GameBoolOption() {
-	delete m_ui;
+        delete m_ui;
 }
 
 void GameBoolOption::setText(QString txt) {
-	m_ui->cbOption->setText(txt);
+        m_ui->cbOption->setText(txt);
 }
 
 void GameBoolOption::setValue(QString val) {
-	bool value = false;
-	if(val == "1") value = true;
+        bool value = false;
+        if(val == "1") value = true;
 
-	m_ui->cbOption->setChecked(value);
+        m_ui->cbOption->setChecked(value);
 }
 
 void GameBoolOption::emitOptionChanged(bool ch) {
-	QString cmd = command;
-	if (ch) cmd = cmd+"1";
-	else cmd = cmd+"0";
+        QString cmd = command;
+        if (ch) cmd = cmd+"1";
+        else cmd = cmd+"0";
 
-	emit(optionChanged(cmd));
+        emit(optionChanged(cmd));
 }
 
 void GameBoolOption::changeEvent(QEvent *e) {
-    QWidget::changeEvent(e);
-    switch (e->type()) {
-    case QEvent::LanguageChange:
-        m_ui->retranslateUi(this);
-        break;
-    default:
-        break;
-    }
+        QWidget::changeEvent(e);
+        switch (e->type()) {
+        case QEvent::LanguageChange:
+                m_ui->retranslateUi(this);
+                break;
+        default:
+                break;
+        }
 }

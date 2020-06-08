@@ -29,60 +29,60 @@
 #include "messagetranslator.h"
 
 class CapiServer : public QObject {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		CapiServer(QObject* parent=0);
-		CapiServer(QString port, QObject* parent=0);
-		~CapiServer();
+public:
+        CapiServer(QObject* parent=0);
+        CapiServer(QString port, QObject* parent=0);
+        ~CapiServer();
 
-		static QString maskXML(QString txt);
-		static bool hasSemicolon(QString txt, int* pos);
+        static QString maskXML(QString txt);
+        static bool hasSemicolon(QString txt, int* pos);
 
-	private:
-		QTimer* timer;
+private:
+        QTimer* timer;
 
-		QTcpServer* serv;
-		QList<CapiServerPlayer*> players;
-		QMap<QString, CapiServerPlayer*> playerMap;
-		QList<CapiTemplate*> templates;
-		QList<CapiServerGame*> games;
+        QTcpServer* serv;
+        QList<CapiServerPlayer*> players;
+        QMap<QString, CapiServerPlayer*> playerMap;
+        QList<CapiTemplate*> templates;
+        QList<CapiServerGame*> games;
 
-		int pID;
-		int gID;
+        int pID;
+        int gID;
 
-		void init();
+        void init();
 
-		CapiServerPlayer* getPlayerById(int id);
-		CapiServerGame* getGameById(int id);
+        CapiServerPlayer* getPlayerById(int id);
+        CapiServerGame* getGameById(int id);
 
-		void setRegisterAtGators(bool reg);
-		void setRegisterIntrerval(int val);
+        void setRegisterAtGators(bool reg);
+        void setRegisterIntrerval(int val);
 
-		bool nameUsed(QString name);
-		void sendToAll(QString msg, int gid=-2); //Send a message to all players within the same game, or to all, when gid is not given
-		void deletePlayer(int pid);
-		CapiTemplate* getTemplate(QString type);
-		CapiServerGame* createGame(CapiTemplate* tmpl);
-		QString getTemplateUpdate(QString name, QString desc, QString type);
+        bool nameUsed(QString name);
+        void sendToAll(QString msg, int gid=-2); //Send a message to all players within the same game, or to all, when gid is not given
+        void deletePlayer(int pid);
+        CapiTemplate* getTemplate(QString type);
+        CapiServerGame* createGame(CapiTemplate* tmpl);
+        QString getTemplateUpdate(QString name, QString desc, QString type);
 
-		QString host;
-		QString port;
-		QString version;
-		bool registerAtGators;
-		int registerInterval;
-		int secsSinceLastRegister;
-		QNetworkReply* oldReply;
-		QNetworkAccessManager* man;
-		MessageTranslator* translator;
+        QString host;
+        QString port;
+        QString version;
+        bool registerAtGators;
+        int registerInterval;
+        int secsSinceLastRegister;
+        QNetworkReply* oldReply;
+        QNetworkAccessManager* man;
+        MessageTranslator* translator;
 
-		bool isListening();
+        bool isListening();
 
-	private slots:
-		void tick();
-		void manageConnection();
-		void handleMessage(int pid, QString msg);
-		void registerGator();
+private slots:
+        void tick();
+        void manageConnection();
+        void handleMessage(int pid, QString msg);
+        void registerGator();
 };
 
 #endif // CAPISERVER_H

@@ -24,61 +24,61 @@ MessageTranslator::MessageTranslator() {
 }
 
 MessageTranslator::~MessageTranslator() {
-	while (translators.size() > 0) {
-		QMap<QString, QString>* trans = translators.value(translators.keys().value(0));
-		translators.remove(translators.keys().value(0));
-		delete trans;
-	}
+        while (translators.size() > 0) {
+                QMap<QString, QString>* trans = translators.value(translators.keys().value(0));
+                translators.remove(translators.keys().value(0));
+                delete trans;
+        }
 }
 
 void MessageTranslator::loadLang(QString lang) {
-	//First check, if the lang exits. if not create it.
-	QMap<QString,QString>* trans = translators.value(lang);
-	if (trans == 0) {
-		trans = new QMap<QString, QString>();
-		translators.insert(lang, trans);
-	}
+        //First check, if the lang exits. if not create it.
+        QMap<QString,QString>* trans = translators.value(lang);
+        if (trans == 0) {
+                trans = new QMap<QString, QString>();
+                translators.insert(lang, trans);
+        }
 
-	//Now load the Lang file
-	//Get Server-data from config file
-	QFile cfile(QApplication::applicationDirPath()+"/ts/Capid_"+lang+".trans");
-	if (!cfile.exists()) return;
+        //Now load the Lang file
+        //Get Server-data from config file
+        QFile cfile(QApplication::applicationDirPath()+"/ts/Capid_"+lang+".trans");
+        if (!cfile.exists()) return;
 
-	//Read translations
-	cfile.open(QIODevice::ReadOnly);
-	while (!cfile.atEnd()) {
-		QString line = cfile.readLine();
-		line = line.replace("\n", "");
+        //Read translations
+        cfile.open(QIODevice::ReadOnly);
+        while (!cfile.atEnd()) {
+                QString line = cfile.readLine();
+                line = line.replace("\n", "");
 
-		//Ignore comments and empty lines
-		if (line == "") continue;
-		if (line.startsWith("#")) continue;
+                //Ignore comments and empty lines
+                if (line == "") continue;
+                if (line.startsWith("#")) continue;
 
-		QString line2 = cfile.readLine();
-		line2 = line2.replace("\n", "");
-		trans->insert(line, line2);
-	}
+                QString line2 = cfile.readLine();
+                line2 = line2.replace("\n", "");
+                trans->insert(line, line2);
+        }
 }
 
 QString MessageTranslator::translateMessage(QString text, QString lang, QMap<QString, QString>* args) {
-	return replaceVars(translate(text, lang), args);
+        return replaceVars(translate(text, lang), args);
 }
 
 QString MessageTranslator::translate(QString text, QString lang) {
-	QMap<QString, QString>* trans = translators.value(lang);
-	if (trans != 0) {
-		QString trText = trans->value(text);
-		if (!trText.isNull()) return trText;
-	}
-	return text;
+        QMap<QString, QString>* trans = translators.value(lang);
+        if (trans != 0) {
+                QString trText = trans->value(text);
+                if (!trText.isNull()) return trText;
+        }
+        return text;
 }
 
 QString MessageTranslator::replaceVars(QString text, QMap<QString, QString>* args) {
-	QString ret = text;
+        QString ret = text;
 
-	if (args == 0) return ret;
-	foreach (QString k, args->keys()) {
-		ret = ret.replace(k, args->value(k));
-	}
-	return ret;
+        if (args == 0) return ret;
+        foreach (QString k, args->keys()) {
+                ret = ret.replace(k, args->value(k));
+        }
+        return ret;
 }

@@ -17,41 +17,41 @@
 #include "capiclientgame.h"
 
 CapiClientGame::CapiClientGame(int id) : CapiGame(id) {
-	listed = true;
+        listed = true;
 }
 
 CapiClientEstate* CapiClientGame::getEstate(int id) {
-	if (id < 0) return 0;
-	foreach (CapiEstate* e, estates)
-		if (e->getId() == id) return (CapiClientEstate* ) e;
+        if (id < 0) return 0;
+        foreach (CapiEstate* e, estates)
+                if (e->getId() == id) return (CapiClientEstate* ) e;
 
-	CapiClientEstate* f = new CapiClientEstate(id);
-	estates.append(f);
-	return f;
+        CapiClientEstate* f = new CapiClientEstate(id);
+        estates.append(f);
+        return f;
 }
 
 CapiGroup* CapiClientGame::getGroupFromList(int i) {
-	if (i < 0) return 0;
-	if ( i >= groups.size()) return 0;
-	return groups.value(i);
+        if (i < 0) return 0;
+        if ( i >= groups.size()) return 0;
+        return groups.value(i);
 }
 
 int CapiClientGame::getGroupListNumber(int gid) {
-	for (int i = 0; i < groups.size(); i++) {
-		CapiGroup* g = groups.value(i);
-		if (g->getId() == gid) return i;
-	}
-	return -1;
+        for (int i = 0; i < groups.size(); i++) {
+                CapiGroup* g = groups.value(i);
+                if (g->getId() == gid) return i;
+        }
+        return -1;
 }
 
 int CapiClientGame::getNumGroups() {
-	return groups.size();
+        return groups.size();
 }
 
 bool CapiClientGame::getListed() {
-	return listed;
+        return listed;
 }
 
 void CapiClientGame::setListed(bool l) {
-	listed = l;
+        listed = l;
 }

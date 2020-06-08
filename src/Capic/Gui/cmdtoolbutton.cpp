@@ -17,13 +17,13 @@
 #include "cmdtoolbutton.h"
 
 CmdToolButton::CmdToolButton(QWidget* parent) : QToolButton(parent) {
-	cmd = "";
-	connect(this, SIGNAL(clicked()), this, SLOT(sendCmd()));
+        cmd = "";
+        connect(this, SIGNAL(clicked()), this, SLOT(sendCmd()));
 }
 
 CmdToolButton::~CmdToolButton() {
 }
 
 void CmdToolButton::sendCmd() {
-	emit(cmdClicked(cmd));
+        emit(cmdClicked(cmd));
 }

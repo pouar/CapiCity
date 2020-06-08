@@ -21,55 +21,55 @@
 #include <QPainter>
 
 Notifier::Notifier(QWidget *parent) : QWidget(parent), ui(new Ui::Notifier) {
-	ui->setupUi(this);
-	QPalette p = this->palette();
-	c = p.brush(QPalette::Window).color();
-	c.setAlpha(192);
-	setWindowFlags(Qt::FramelessWindowHint | Qt::ToolTip);
-	setAttribute(Qt::WA_TranslucentBackground);
+        ui->setupUi(this);
+        QPalette p = this->palette();
+        c = p.brush(QPalette::Window).color();
+        c.setAlpha(192);
+        setWindowFlags(Qt::FramelessWindowHint | Qt::ToolTip);
+        setAttribute(Qt::WA_TranslucentBackground);
 
-	timer = new QTimer(this);
-	timer->setSingleShot(true);
+        timer = new QTimer(this);
+        timer->setSingleShot(true);
 
-	connect(timer, SIGNAL(timeout()), this, SLOT(hideNotify()));
-	connect(ui->bClose, SIGNAL(clicked()), this, SLOT(hideNotify()));
+        connect(timer, SIGNAL(timeout()), this, SLOT(hideNotify()));
+        connect(ui->bClose, SIGNAL(clicked()), this, SLOT(hideNotify()));
 
-	QRect screen = QApplication::desktop()->availableGeometry(this);
-	int x = (screen.width() - this->width());
-	int y = (screen.height() - this->height());
-	this->move(x,y);
+        QRect screen = QApplication::desktop()->availableGeometry(this);
+        int x = (screen.width() - this->width());
+        int y = (screen.height() - this->height());
+        this->move(x,y);
 }
 
 Notifier::~Notifier() {
-	delete ui;
-	delete timer;
+        delete ui;
+        delete timer;
 }
 
 void Notifier::changeEvent(QEvent *e) {
-	QWidget::changeEvent(e);
+        QWidget::changeEvent(e);
 
-	switch (e->type()) {
-		case QEvent::LanguageChange:
-			ui->retranslateUi(this);
-			break;
-		default:
-			break;
-	}
+        switch (e->type()) {
+        case QEvent::LanguageChange:
+                ui->retranslateUi(this);
+                break;
+        default:
+                break;
+        }
 }
 
 void Notifier::paintEvent(QPaintEvent *e) {
-	QPainter p(this);
-	p.fillRect(rect(), c);
-	QWidget::paintEvent(e);
+        QPainter p(this);
+        p.fillRect(rect(), c);
+        QWidget::paintEvent(e);
 }
 
 void Notifier::showNotify(int secs) {
-	this->show();
-	timer->setTimerType(Qt::PreciseTimer);
-	timer->start(1000*secs);
+        this->show();
+        timer->setTimerType(Qt::PreciseTimer);
+        timer->start(1000*secs);
 }
 
 void Notifier::hideNotify() {
-	if (timer->isActive()) timer->stop();
-	this->hide();
+        if (timer->isActive()) timer->stop();
+        this->hide();
 }

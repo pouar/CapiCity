@@ -17,47 +17,47 @@
 #include "capidept.h"
 
 CapiDept::CapiDept(CapiPlayer* fPlayer, CapiPlayer* tPlayer, CapiEstate* tEstate, int a) {
-	fromPlayer = fPlayer;
-	toPlayer = tPlayer;
-	toEstate = tEstate;
-	amount = a;
-	payed = false;
+        fromPlayer = fPlayer;
+        toPlayer = tPlayer;
+        toEstate = tEstate;
+        amount = a;
+        payed = false;
 }
 
 bool CapiDept::getPayed() {
-	return payed;
+        return payed;
 }
 
 void CapiDept::setPayed(bool  p) {
-	payed = p;
+        payed = p;
 }
 
 CapiPlayer* CapiDept::getFromPlayer() {
-	return fromPlayer;
+        return fromPlayer;
 }
 
 CapiPlayer* CapiDept::getToPlayer() {
-	return toPlayer;
+        return toPlayer;
 }
 
 CapiEstate* CapiDept::getToEstate() {
-	return toEstate;
+        return toEstate;
 }
 
 int CapiDept::getAmount() {
-	return amount;
+        return amount;
 }
 
 bool CapiDept::pay() {
-	//Pays dept, if possible;
-	if (fromPlayer->getMoney() < amount) return false;
+        //Pays dept, if possible;
+        if (fromPlayer->getMoney() < amount) return false;
 
-	fromPlayer->setMoney(fromPlayer->getMoney()-amount);
-	if (toPlayer != 0) {
-		toPlayer->setMoney(toPlayer->getMoney()+amount);
-	} else if (toEstate != 0) {
-		toEstate->setMoney(toEstate->getMoney()+amount);
-	}
-	payed = true;
-	return true;
+        fromPlayer->setMoney(fromPlayer->getMoney()-amount);
+        if (toPlayer != 0) {
+                toPlayer->setMoney(toPlayer->getMoney()+amount);
+        } else if (toEstate != 0) {
+                toEstate->setMoney(toEstate->getMoney()+amount);
+        }
+        payed = true;
+        return true;
 }

@@ -22,16 +22,16 @@
 
 class CapiTemplate : public CapiObject {
 
-	public:
-		CapiTemplate();
-		QString getType();
-		QString getDesc();
+public:
+        CapiTemplate();
+        QString getType();
+        QString getDesc();
 
-		void setType(QString t);
-		void setDesc(QString d);
+        void setType(QString t);
+        void setDesc(QString d);
 
-	protected:
-		QString type;
-		QString desc;
+protected:
+        QString type;
+        QString desc;
 };
 #endif // CAPITEMPLATE_H

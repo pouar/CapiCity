@@ -17,59 +17,59 @@
 #include "capigroup.h"
 
 CapiGroup::CapiGroup(int id, QString n) : CapiObject(id) {
-	setName(n);
+        setName(n);
 }
 
 int CapiGroup::getNumEstates() {
-	return estates.size();
+        return estates.size();
 }
 
 CapiEstate* CapiGroup::getEstate(int i) {
-	if (i < 0) return 0;
-	if (i >= getNumEstates()) return 0;
+        if (i < 0) return 0;
+        if (i >= getNumEstates()) return 0;
 
-	return estates.value(i);
+        return estates.value(i);
 }
 
 void CapiGroup::addEstate(CapiEstate* f) {
-	estates.append(f);
+        estates.append(f);
 }
 
 bool CapiGroup::getAllEstatesSameOwner() {
-	if (estates.size() == 0) return false;
-	CapiPlayer* owner = estates.value(0)->getOwner();
-	if (owner == 0) return false;
+        if (estates.size() == 0) return false;
+        CapiPlayer* owner = estates.value(0)->getOwner();
+        if (owner == 0) return false;
 
-	foreach (CapiEstate* f, estates) {
-		if ((f->getOwner() == 0) || (owner->getId() != f->getOwner()->getId())) return false;
-	}
+        foreach (CapiEstate* f, estates) {
+                if ((f->getOwner() == 0) || (owner->getId() != f->getOwner()->getId())) return false;
+        }
 
-	return true;
+        return true;
 }
 
 int CapiGroup::getNumHouses() {
-	int n = 0;
+        int n = 0;
 
-	foreach (CapiEstate* f, estates) {
-		n += f->getHouses();
-	}
+        foreach (CapiEstate* f, estates) {
+                n += f->getHouses();
+        }
 
-	return n;
+        return n;
 }
 
 bool CapiGroup::canBuyHouseRow() {
-	bool canBuyRow = true;
-	foreach (CapiEstate* f, estates) {
-		canBuyRow = canBuyRow && f->getCanBuyHouse();
-	}
-	return canBuyRow;
+        bool canBuyRow = true;
+        foreach (CapiEstate* f, estates) {
+                canBuyRow = canBuyRow && f->getCanBuyHouse();
+        }
+        return canBuyRow;
 }
 
 bool CapiGroup::canSellHouseRow() {
-	bool canSellRow = true;
-	foreach (CapiEstate* f, estates) {
-		canSellRow = canSellRow && f->getCanSellHouse();
-	}
-	return canSellRow;
+        bool canSellRow = true;
+        foreach (CapiEstate* f, estates) {
+                canSellRow = canSellRow && f->getCanSellHouse();
+        }
+        return canSellRow;
 }
 

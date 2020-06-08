@@ -24,61 +24,61 @@
 #include "tradeitem.h"
 
 namespace Ui {
-	class Trade;
+        class Trade;
 }
 
 class Trade : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		Trade(int id, QWidget *parent = 0);
-		~Trade();
-		int getId();
-		void setGame(CapiGame* g);
-		void setRev(int r);
+public:
+        Trade(int id, QWidget *parent = 0);
+        ~Trade();
+        int getId();
+        void setGame(CapiGame* g);
+        void setRev(int r);
 
-	private:
-		Ui::Trade *m_ui;
-		int rev;
-		int tradeId;
-		int actor; //Playerid oof initiator of the trade
-		//QHash<QString, QString> estates;
-		//QHash<QString, QString> cards;
+private:
+        Ui::Trade *m_ui;
+        int rev;
+        int tradeId;
+        int actor; //Playerid oof initiator of the trade
+        //QHash<QString, QString> estates;
+        //QHash<QString, QString> cards;
 
-		CapiGame* game;
-		QList<TradeItem*> trades;
-		QHash<QString, QString> accepts;
+        CapiGame* game;
+        QList<TradeItem*> trades;
+        QHash<QString, QString> accepts;
 
-		TradeItem* getEstateItem(int estateId);
-		TradeItem* getCardItem(int cardId);
-		TradeItem* getMoneyItem(int fromPlayerId, int toPlayerId);
-		void remove(TradeItem* ti);
-		void resetAccepts();
-		void updateAcceptList();
+        TradeItem* getEstateItem(int estateId);
+        TradeItem* getCardItem(int cardId);
+        TradeItem* getMoneyItem(int fromPlayerId, int toPlayerId);
+        void remove(TradeItem* ti);
+        void resetAccepts();
+        void updateAcceptList();
 
-	public slots:
-		void updateTradeActor(int pid);
-		void updateEstateTrade(int estateId, int targetId);
-		void updateCardTrade(int cardId, int targetId);
-		void updateMoneyTrade(int fromId, int money, int targetId);
-		void updateTradeAccept(int playerId, bool accept);
-		void reject();
+public slots:
+        void updateTradeActor(int pid);
+        void updateEstateTrade(int estateId, int targetId);
+        void updateCardTrade(int cardId, int targetId);
+        void updateMoneyTrade(int fromId, int money, int targetId);
+        void updateTradeAccept(int playerId, bool accept);
+        void reject();
 
-	private slots:
-		void sendCommand(QString cmd);
-		void updateCbEstate(int i);
-		void updateCbCard(int i);
-		void addEstate();
-		void addCard();
-		void addMoney();
-		void accept();
+private slots:
+        void sendCommand(QString cmd);
+        void updateCbEstate(int i);
+        void updateCbCard(int i);
+        void addEstate();
+        void addCard();
+        void addMoney();
+        void accept();
 
-	protected:
-		void changeEvent(QEvent *e);
-		void closeEvent(QCloseEvent* e);
+protected:
+        void changeEvent(QEvent *e);
+        void closeEvent(QCloseEvent* e);
 
-	signals:
-		void tradeCommand(QString cmd);
+signals:
+        void tradeCommand(QString cmd);
 };
 
 #endif // TRADE_H

@@ -17,68 +17,68 @@
 #include "capiservergroup.h"
 
 CapiServerGroup::CapiServerGroup(int id, QString n) : CapiGroup(id, n) {
-	color = "";
-	bgColor = "";
-	housePrice = 0;
-	price = -1;
-	rentMath = "";
+        color = "";
+        bgColor = "";
+        housePrice = 0;
+        price = -1;
+        rentMath = "";
 }
 
 QString CapiServerGroup::maskXML(QString txt) {
-	QString msg = txt.replace("&", "&#38;");
-	msg = msg.replace("<", "&#60;");
-	msg = msg.replace(">", "&#62;");
-	msg = msg.replace("=", "&#61;");
-	msg = msg.replace("\"", "&#34;");
-	return msg;
+        QString msg = txt.replace("&", "&#38;");
+        msg = msg.replace("<", "&#60;");
+        msg = msg.replace(">", "&#62;");
+        msg = msg.replace("=", "&#61;");
+        msg = msg.replace("\"", "&#34;");
+        return msg;
 }
 
 QString CapiServerGroup::getName(QString lang) {
-	if (names.keys().contains(lang)) return names.value(lang);
-	return CapiGroup::getName();
+        if (names.keys().contains(lang)) return names.value(lang);
+        return CapiGroup::getName();
 }
 
 QString CapiServerGroup::getColor() {
-	return color;
+        return color;
 }
 
 QString CapiServerGroup::getBgColor() {
-	return bgColor;
+        return bgColor;
 }
 
 int CapiServerGroup::getHousePrice() {
-	return housePrice;
+        return housePrice;
 }
 
 int CapiServerGroup::getPrice() {
-	return price;
+        return price;
 }
 
 QString CapiServerGroup::getRentMath() {
-	return rentMath;
+        return rentMath;
 }
 
 void CapiServerGroup::setName(QString name, QString lang) {
-	if (lang.isNull()) CapiGroup::setName(name);
-	else names.insert(lang, name);
+        if (lang.isNull()) CapiGroup::setName(name);
+        else names.insert(lang, name);
 }
 
 void CapiServerGroup::setColor(QString col) {
-	color = col;
+        color = col;
 }
 
 void CapiServerGroup::setBgColor(QString bgcol) {
-	bgColor = bgcol;
+        bgColor = bgcol;
 }
 
 void CapiServerGroup::setHousePrice(int hp) {
-	housePrice = hp;
+        housePrice = hp;
 }
 
 void CapiServerGroup::setPrice(int p) {
-	price = p;
+        price = p;
 }
 
 void CapiServerGroup::setRentMath(QString rm) {
-	rentMath = rm;
+        rentMath = rm;
 }

@@ -23,19 +23,19 @@
 
 class CapiClientEstate : public CapiEstate {
 
-	public:
-		CapiClientEstate(int i);
+public:
+        CapiClientEstate(int i);
 
-		QRect getRect();
-		bool isInRect(int x, int y);
-		QColor getBrushColor();
-		QColor getBgBrushColor();
+        QRect getRect();
+        bool isInRect(int x, int y);
+        QColor getBrushColor();
+        QColor getBgBrushColor();
 
-		void setRect(QRect r);
+        void setRect(QRect r);
 
 
-	protected:
-		QRect rect;
+protected:
+        QRect rect;
 };
 
 #endif // CAPICLIENTESTATE_H

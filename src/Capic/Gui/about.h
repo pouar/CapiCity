@@ -20,21 +20,21 @@
 #include <QWidget>
 
 namespace Ui {
-	class About;
+        class About;
 }
 
 class About : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		About(QWidget *parent = 0);
-		~About();
+public:
+        About(QWidget *parent = 0);
+        ~About();
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	private:
-		Ui::About *ui;
+private:
+        Ui::About *ui;
 };
 
 #endif // ABOUT_H

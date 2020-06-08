@@ -26,45 +26,45 @@
 #include "src/Capic/capiserverinfo.h"
 
 namespace Ui {
-	class ServerChooser;
+        class ServerChooser;
 }
 
 class ServerChooser : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		ServerChooser(QWidget* parent=0);
-		~ServerChooser();
+public:
+        ServerChooser(QWidget* parent=0);
+        ~ServerChooser();
 
-	private:
-		Ui::ServerChooser *ui;
-		//For getting Serverlist
-		QNetworkAccessManager* manager;
-		QNetworkReply* reply1;
-		QNetworkReply* reply2;
+private:
+        Ui::ServerChooser *ui;
+        //For getting Serverlist
+        QNetworkAccessManager* manager;
+        QNetworkReply* reply1;
+        QNetworkReply* reply2;
 
-		QList<QString> ips;
-		QList<CapiServerInfo*> serverInfos;
+        QList<QString> ips;
+        QList<CapiServerInfo*> serverInfos;
 
-		void parseDoc(QDomDocument d);
+        void parseDoc(QDomDocument d);
 
-	public slots:
-		void loadServerList();
+public slots:
+        void loadServerList();
 
-	private slots:
-		void parseList1();
-		void parseList2();
-		void parseServerList(QNetworkReply* reply);
-		void setServer(int line);
-		void connectToServer();
-		void deleteServerInfo();
+private slots:
+        void parseList1();
+        void parseList2();
+        void parseServerList(QNetworkReply* reply);
+        void setServer(int line);
+        void connectToServer();
+        void deleteServerInfo();
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	signals:
-		void serverChoosen(QString host, int port);
-		void localServerChoosen();
+signals:
+        void serverChoosen(QString host, int port);
+        void localServerChoosen();
 };
 
 #endif // SERVERCHOOSER_H

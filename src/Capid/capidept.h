@@ -25,23 +25,23 @@ class CapiEstate;
 
 class CapiDept {
 
-	private:
-		CapiPlayer* fromPlayer;
-		CapiPlayer* toPlayer;
-		CapiEstate* toEstate;
-		int amount;
-		bool payed;
+private:
+        CapiPlayer* fromPlayer;
+        CapiPlayer* toPlayer;
+        CapiEstate* toEstate;
+        int amount;
+        bool payed;
 
-	public:
-		CapiDept(CapiPlayer* fPlayer, CapiPlayer* tPlayer, CapiEstate* tEstate, int amount);
+public:
+        CapiDept(CapiPlayer* fPlayer, CapiPlayer* tPlayer, CapiEstate* tEstate, int amount);
 
-		bool getPayed();
-		void setPayed(bool p);
-		CapiPlayer* getFromPlayer();
-		CapiPlayer* getToPlayer();
-		CapiEstate* getToEstate();
-		int getAmount();
-		bool pay();
+        bool getPayed();
+        void setPayed(bool p);
+        CapiPlayer* getFromPlayer();
+        CapiPlayer* getToPlayer();
+        CapiEstate* getToEstate();
+        int getAmount();
+        bool pay();
 };
 
 #endif // CAPIDEPT_H

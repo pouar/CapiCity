@@ -17,21 +17,21 @@
 #include "capicard.h"
 
 CapiCard::CapiCard(int i) : CapiObject(i) {
-	owner = 0;
+        owner = 0;
 }
 
 QString CapiCard::getTitle() {
-	return getName();
+        return getName();
 }
 
 CapiPlayer* CapiCard::getOwner() {
-	return owner;
+        return owner;
 }
 
 void CapiCard::setTitle(QString t) {
-	setName(t);
+        setName(t);
 }
 
 void CapiCard::setOwner(CapiPlayer* o) {
-	owner = o;
+        owner = o;
 }

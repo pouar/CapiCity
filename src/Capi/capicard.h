@@ -25,17 +25,17 @@ class CapiPlayer;
 
 class CapiCard : public CapiObject {
 
-	public:
-		CapiCard(int i);
+public:
+        CapiCard(int i);
 
-		QString     getTitle(); //Adapter for get/(set name method
-		CapiPlayer* getOwner();
+        QString     getTitle(); //Adapter for get/(set name method
+        CapiPlayer* getOwner();
 
-		void setTitle(QString t);
-		void setOwner(CapiPlayer* o);
+        void setTitle(QString t);
+        void setOwner(CapiPlayer* o);
 
-	protected:
-		CapiPlayer* owner;
+protected:
+        CapiPlayer* owner;
 };
 
 #endif // CAPICARD_H

@@ -20,58 +20,58 @@
 #include <QtWidgets/QWidget>
 
 namespace Ui {
-	class TradeItem;
+        class TradeItem;
 }
 
 class TradeItem : public QWidget {
-	Q_OBJECT
+        Q_OBJECT
 
-	public:
-		TradeItem(int tid, QString type="estate", QWidget *parent = 0);
-		~TradeItem();
+public:
+        TradeItem(int tid, QString type="estate", QWidget *parent = 0);
+        ~TradeItem();
 
-		QString getType();
-		int getFromPlayerId();
-		int getEstateId();
-		int getCardId();
-		int getMoney();
-		int getTargetPlayerId();
+        QString getType();
+        int getFromPlayerId();
+        int getEstateId();
+        int getCardId();
+        int getMoney();
+        int getTargetPlayerId();
 
-		void setFromPlayerId(int pid);
-		void setEstateId(int eid);
-		void setCardId(int cid);
-		void setMoney(int m);
-		void setTargetPlayerId(int pid);
+        void setFromPlayerId(int pid);
+        void setEstateId(int eid);
+        void setCardId(int cid);
+        void setMoney(int m);
+        void setTargetPlayerId(int pid);
 
-		void setFromName(QString name);
-		void setTradeName(QString name);
-		void setTargetName(QString name);
+        void setFromName(QString name);
+        void setTradeName(QString name);
+        void setTargetName(QString name);
 
-	private:
-		Ui::TradeItem *m_ui;
-		int tradeId;
-		QString type; //Can be "estate", "card", "or money"
-		int fromPlayerId;
-		int cardId; //Only from interest, if type == "card"
-		int estateId; //Only from interest, if type == "estate"
-		int money; //Only from interest, if type == "money"
+private:
+        Ui::TradeItem *m_ui;
+        int tradeId;
+        QString type; //Can be "estate", "card", "or money"
+        int fromPlayerId;
+        int cardId; //Only from interest, if type == "card"
+        int estateId; //Only from interest, if type == "estate"
+        int money; //Only from interest, if type == "money"
 
-		QString fromName;
-		QString tradeName;
-		QString targetName;
-		QString txtTemplate;
-		int targetPlayerId;
+        QString fromName;
+        QString tradeName;
+        QString targetName;
+        QString txtTemplate;
+        int targetPlayerId;
 
-		void setText();
+        void setText();
 
-	private slots:
-		void emitTradeCommand();
+private slots:
+        void emitTradeCommand();
 
-	protected:
-		void changeEvent(QEvent *e);
+protected:
+        void changeEvent(QEvent *e);
 
-	signals:
-		void tradeCommand(QString cmd);
+signals:
+        void tradeCommand(QString cmd);
 };
 
 #endif // TRADEITEM_H

@@ -23,53 +23,53 @@
 
 class CapiServerEstate : public CapiEstate {
 
-	public:
-		CapiServerEstate(int id);
-		~CapiServerEstate();
+public:
+        CapiServerEstate(int id);
+        ~CapiServerEstate();
 
-		QString           getName(QString lang=QString());
-		int               getTax();
-		int               getTaxPercent();
-		QString           getTakeCard();
-		int               getPassmoney();
-		CapiServerEstate* getPayTarget();
-		bool              getToJail();
-		bool              getJail();
-		int               getPayAmount();
-		bool              getFreeParking();
-		bool              getGo();
-		int               getAdvanceToIfOwned();
+        QString           getName(QString lang=QString());
+        int               getTax();
+        int               getTaxPercent();
+        QString           getTakeCard();
+        int               getPassmoney();
+        CapiServerEstate* getPayTarget();
+        bool              getToJail();
+        bool              getJail();
+        int               getPayAmount();
+        bool              getFreeParking();
+        bool              getGo();
+        int               getAdvanceToIfOwned();
 
-		void setName(QString name, QString lang=QString());
-		void setTax(int t);
-		void setTaxPercent(int tp);
-		void setPayTarget(CapiServerEstate* pt);
-		void setTakeCard(QString tc);
-		void setPassmoney(int pm);
-		void setToJail(bool tj);
-		void setJail(bool j);
-		void setPayAmount(int pa);
-		void setFreeParking(bool fp);
-		void setGo(bool g);
-		void setAdvanceToIfOwned(int atio);
-		void setPrice(int p);
+        void setName(QString name, QString lang=QString());
+        void setTax(int t);
+        void setTaxPercent(int tp);
+        void setPayTarget(CapiServerEstate* pt);
+        void setTakeCard(QString tc);
+        void setPassmoney(int pm);
+        void setToJail(bool tj);
+        void setJail(bool j);
+        void setPayAmount(int pa);
+        void setFreeParking(bool fp);
+        void setGo(bool g);
+        void setAdvanceToIfOwned(int atio);
+        void setPrice(int p);
 
-		QString getUpdate(QString type="", QString lang=QString());
-		QString maskXML(QString txt);
+        QString getUpdate(QString type="", QString lang=QString());
+        QString maskXML(QString txt);
 
-	private:
-		QMap<QString, QString> names;
-		int tax;
-		int taxpercent;
-		QString takeCard;
-		int passmoney;
-		CapiServerEstate* payTarget;
-		bool toJail;
-		bool jail;
-		int payAmount;
-		bool freeParking;
-		bool go;
-		int advanceToIfOwned;
+private:
+        QMap<QString, QString> names;
+        int tax;
+        int taxpercent;
+        QString takeCard;
+        int passmoney;
+        CapiServerEstate* payTarget;
+        bool toJail;
+        bool jail;
+        int payAmount;
+        bool freeParking;
+        bool go;
+        int advanceToIfOwned;
 };
 
 #endif // CAPISERVERESTATE_H
