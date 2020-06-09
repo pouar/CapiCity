@@ -21,7 +21,11 @@
 #include <QAction>
 #include <QMenu>
 #include <QFile>
+#include <QFileInfo>
 #include <QtDebug>
+#include <QStandardPaths>
+#include <QStringList>
+#include <QString>
 #include "field.h"
 #include "ui_field.h"
 #include "cmdtoolbutton.h"
@@ -29,6 +33,18 @@
 #include "src/Capi/capiestate.h"
 #include "src/Capic/capiclientestate.h"
 
+static QString effectiveImage(QString path)
+{
+        QStringListIterator iter(QStandardPaths::standardLocations(QStandardPaths::AppDataLocation));
+        while(iter.hasNext())
+        {
+                if(QFileInfo(iter.peekNext()+"/"+path).exists())
+                        return iter.peekNext()+"/"+path;
+                else
+                        iter.next();
+        }
+        return ":/"+path;
+}
 Field::Field(QWidget* parent) : QWidget(parent), ui(new Ui::Field) {
         ui->setupUi(this);
         text = new QTextBrowser(this);
@@ -683,7 +699,7 @@ void Field::renderEstate(int eid) {
                 p.setPen(Qt::black);
                 int imSize = fName.width();
                 if (fName.height() < imSize) imSize = fName.height();
-                QPixmap estateImage(":/images/field/"+f->getPicture());
+                QPixmap estateImage(effectiveImage(f->getPicture()));
                 if (f->getName().contains(search, Qt::CaseInsensitive)) {
                         if (!estateImage.isNull()) {
                                 estateImage = estateImage.scaled(imSize, imSize);

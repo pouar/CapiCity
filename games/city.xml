@@ -239,7 +239,7 @@
   <estate id="7" name="Chance">
     <takecard>chance</takecard>
     <paytarget>20</paytarget>
-    <icon>qmark-red.png</icon>
+    <icon>images/field/qmark-red.png</icon>
   </estate>
   <estate id="8" name="Vermont Avenue">
     <group>1</group>
@@ -338,7 +338,7 @@
   </estate>
   <estate id="20" name="Free Parking">
     <freeparking>1</freeparking>
-    <icon>dollar.png</icon>
+    <icon>images/field/dollar.png</icon>
   </estate>
   <estate id="21" name="Kentucky Avenue">
     <group>4</group>
@@ -353,7 +353,7 @@
   <estate id="22" name="Chance">
     <takecard>chance</takecard>
     <paytarget>20</paytarget>
-    <icon>qmark-red.png</icon>
+    <icon>images/field/qmark-red.png</icon>
   </estate>
   <estate id="23" name="Indiana Avenue">
     <group>4</group>
@@ -454,7 +454,7 @@
   <estate id="36" name="Chance">
     <takecard>chance</takecard>
     <paytarget>20</paytarget>
-    <icon>qmark-red.png</icon>
+    <icon>images/field/qmark-red.png</icon>
   </estate>
   <estate id="37" name="Park Place">
     <group>7</group>
