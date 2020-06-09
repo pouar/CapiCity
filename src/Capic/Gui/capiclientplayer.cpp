@@ -139,7 +139,8 @@ int CapiClientPlayer::getOffset() {
 }
 
 void CapiClientPlayer::weakShadow() {
-        QImage shdw = avImage.alphaChannel();
+        QImage shdw = avImage.convertToFormat(QImage::Format_Alpha8);
+        shdw.reinterpretAsFormat(QImage::Format_Grayscale8);
         shadow = QImage(shdw.width(), shdw.height(), QImage::Format_ARGB32);
         for (int x = 0; x < shdw.width(); x++) {
                 for (int y = 0; y < shdw.height(); y++) {
