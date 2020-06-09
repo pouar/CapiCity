@@ -288,13 +288,11 @@ void Field::mousePressEvent(QMouseEvent* event) {
 void Field::wheelEvent(QWheelEvent* event) {
         if (event->modifiers() != Qt::ControlModifier) return;
 
-        if (event->orientation() == Qt::Vertical) {
-                if (event->delta() > 0) {
-                        scroll = (scroll+1)%game->getNumEstates();
-                } else {
-                        scroll --;
-                        if (scroll < 0) scroll = game->getNumEstates()-1;
-                }
+        if (event->angleDelta().y() > 0) {
+                scroll = (scroll+1)%game->getNumEstates();
+        } else if (event->angleDelta().y() < 0) {
+                scroll --;
+                if (scroll < 0) scroll = game->getNumEstates()-1;
         }
         event->accept();
         updateBoard();
