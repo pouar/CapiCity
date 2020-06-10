@@ -18,30 +18,18 @@
 #include "ui_config.h"
 #include "src/defines.h"
 
+#include <QString>
 #include <QFileDialog>
 #include <QBuffer>
 
 Config::Config(QWidget *parent) : QDialog(parent), m_ui(new Ui::Config) {
         m_ui->setupUi(this);
 
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/badge.png"),         "", QVariant("badge.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/beachball.png"),     "", QVariant("beachball.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/bell.png"),          "", QVariant("bell.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/bomb.png"),          "", QVariant("bomb.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/cat.png"),           "", QVariant("cat.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/cookie.png"),        "", QVariant("cookie.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/cube.png"),          "", QVariant("cube.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/eyeball.png"),       "", QVariant("eyeball.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/flag.png"),          "", QVariant("flag.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/ghost.png"),         "", QVariant("ghost.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/globe.png"),         "", QVariant("globe.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/hamburger.png"),     "", QVariant("hamburger.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/lips.png"),          "", QVariant("lips.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/puzzle.png"),        "", QVariant("puzzle.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/pyramid.png"),       "", QVariant("pyramid.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/skull.png"),         "", QVariant("skull.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/traffic_light.png"), "", QVariant("traffic_light.png"));
-        m_ui->cbImage->addItem(QIcon(":/images/avatars/wizard.png"),        "", QVariant("wizard.png"));
+        for (QString i : {"badge","beachball","bell","bomb","cat","cookie","cube","eyeball","flag","ghost",
+                        "globe","hamburger","lips","puzzle","pyramid","skull","traffic_light","wizard"})
+        {
+                m_ui->cbImage->addItem(QIcon(":/images/avatars/"+i+".png"),         "", QVariant(i+".png"));
+        }
 
         //SEt notification-checkbox
         m_ui->cbNotify->setChecked(s.value(CONFIG_WINDOW_SHOWNOTIFICATION, CONFIG_WINDOW_SHOWNOTIFICATION_DEFAULT).toBool());
